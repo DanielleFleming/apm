@@ -1,0 +1,143 @@
+.site-content {
+    & .widget.widget_sow-layout-slider {
+        & .sow-slider-base {
+            & .sow-slider-pagination {
+                display: none !important;
+            }
+
+            & .sow-slide-nav {
+                top: auto;
+                bottom: 36px;
+                width: 30px;
+                height: 46px;
+                opacity: 1;
+                background: #3e4543;
+
+                & a {
+                    display: block;
+                    height: 46px;
+                    font-size: 16px;
+                    text-align: center;
+                    text-indent: -2px;
+
+                    & em {
+                        display: block;
+                        height: 46px;
+                        line-height: 46px;
+                    }
+                }
+
+                &.sow-slide-nav-prev {
+                    left: 0;
+
+                    & a {
+                        text-indent: -2px;
+                    }
+                }
+
+                &.sow-slide-nav-next {
+                    right: 0;
+
+                    & a {
+                        text-indent: 2px;
+                    }
+                }
+            }
+
+            & .sow-slider-image-wrapper {
+                padding-right: 100px;
+                padding-left: 100px;
+
+                & * {
+                    text-shadow: none;
+                }
+
+                & .widget.widget_sow-editor {
+                    & h1,
+                    & h2,
+                    & h3,
+                    & h4,
+                    & h5,
+                    & h6 {
+                        position: relative;
+                        margin: 0;
+                        padding: 0 0 15px 0;
+                        font-weight: bold;
+                    }
+
+                    & h1 {
+                        font-size: 48px;
+                        line-height: 52px;
+                        color: $brand-gray;
+                    }
+
+                    & p {
+                        position: relative;
+                        margin: 0 0 20px 0;
+                        padding: 0 0 5px 0;
+                        font-size: 20px;
+                        font-weight: bold;
+                        line-height: 24px;
+                        color: $brand-gray;
+                    }
+
+                    & h1,
+                    & h2,
+                    & h3,
+                    & h4,
+                    & h5,
+                    & h6,
+                    & p {
+                        &:before {
+                            position: absolute;
+                            left: -100px;
+                            display: block;
+                            width: 30px;
+                            height: 100%;
+                            background: $brand-red;
+                            content: "";
+                        }
+                    }
+
+                    & p:last-child {
+                        &:before {
+                            display: none;
+                        }
+                    }
+
+                    & .btn.btn-primary,
+                    & .btn.btn-secondary {
+                        margin: 15px 0;
+                        padding: 10px 15px;
+                        background-color: transparent;
+                        border: 3px #fff solid;
+                        border-radius: 0;
+                        font-size: 26px;
+                        font-weight: bold;
+                        line-height: 26px;
+                        color: #fff;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background-color: #fff;
+                            color: $brand-red;
+                        }
+                    }
+
+                    & .btn.btn-secondary {
+                        border-color: $brand-red;
+                        color: $brand-red;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background-color: $brand-red;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

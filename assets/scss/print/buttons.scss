@@ -1,0 +1,19 @@
+@media print {
+    .btn {
+        display: block !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        font-weight: bold !important;
+        white-space: normal !important;
+
+        &[href] {
+            &:after {
+                display: block !important;
+                content: attr(href) !important;
+                word-break: break-word;
+            }
+        }
+    }
+}

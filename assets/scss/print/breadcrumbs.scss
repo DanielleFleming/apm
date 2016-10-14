@@ -1,0 +1,14 @@
+@media print {
+    .core-breadcrumbs {
+        & > span {
+            padding: 0 0 30px 0;
+
+            & a,
+            & .breadcrumb_last {
+                &:after {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
