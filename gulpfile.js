@@ -26,14 +26,6 @@ gulp.task(  'sass:admin',
                     .pipe( gulp.dest( 'assets/css' ) );
             } );
 
-gulp.task(  'sass:freshdesk',
-            function() {
-                return gulp.src( 'assets/scss/theme-freshdesk.scss' )
-                    .pipe( sass_glob() )
-                    .pipe( sass().on( 'error', sass.logError ) )
-                    .pipe( gulp.dest( 'assets/css' ) );
-            } );
-
 gulp.task(  'minify-css',
             function() {
                 if ( env.production() ) {
