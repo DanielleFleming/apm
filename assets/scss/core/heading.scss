@@ -1,0 +1,24 @@
+body {
+    & .core-heading {
+        & h1.core-heading--title {
+            margin: 0 0 20px 0;
+            font-size: 48px;
+            line-height: 48px;
+            font-weight: bold;
+        }
+        & h2.core-heading--subtitle {
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: normal;
+        }
+
+        &:after {
+            display: block;
+            clear: both;
+            width: 135px;
+            height: 1px;
+            background: $brand-gray;
+            content: '';
+        }
+    }
+}

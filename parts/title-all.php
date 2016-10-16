@@ -23,8 +23,8 @@
         $_subtitle = get_field( 'title-subtitle' );
         ?>
         <header class="core-heading">
-            <h1><?php echo $_title; ?></h1>
-            <?php if ( strlen( $_subtitle ) ) : ?><h2><?php echo $_subtitle; ?></h2><?php endif; ?>
+            <h1 class="core-heading--title"><?php echo $_title; ?></h1>
+            <?php if ( strlen( $_subtitle ) ) : ?><h2 class="core-heading--subtitle"><?php echo $_subtitle; ?></h2><?php endif; ?>
         </header>
         <?php
     }

@@ -1,0 +1,56 @@
+.widget.widget_apm-cta-news {
+    margin-right: -15px;
+    margin-left: -15px;
+    background: $brand-red;
+
+    & > .so-widget-apm-cta-news {
+        position: relative;
+        padding: 20px 15px 20px 275px;
+        color: #fff;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 45px;
+            display: block;
+            width: 180px;
+            height: 100%;
+            background-image: url(../..//widgets/apm-cta-news/assets/images/icon-news.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 100%;
+            content: "";
+        }
+
+        & > h2.title {
+            margin: 0 0 20px 0;
+            padding: 0;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 30px;
+        }
+
+        & .apm-cta-news--preview {
+            & > h3 {
+                display: block;
+                margin: 0 0 5px 0;
+                padding: 0;
+                font-size: 22px;
+                font-weight: bold;
+                line-height: 25px;
+                color: #fff;
+            }
+            & > p {
+                margin: 0;
+            }
+            & a {
+                color: #fff;
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

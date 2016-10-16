@@ -12,7 +12,7 @@
 ?>
     <section class="container site-content">
         <div class="row">
-            <article class="col-md-8">
+            <article class="col-md-8 site-content--primary" role="article">
                 <?php
                     if ( have_posts() ) :
                         // Start the Loop.
@@ -24,7 +24,7 @@
                     endif;
                 ?>
             </article>
-            <aside class="col-md-4 site-content--sidebar">
+            <aside class="col-md-4 site-content--sidebar" role="complementary">
                 <?php dynamic_sidebar( 'sidebar-default' ); ?>
             </aside>
         </div>

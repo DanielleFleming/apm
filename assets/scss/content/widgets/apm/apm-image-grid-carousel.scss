@@ -1,0 +1,108 @@
+.widget.widget_apm-image-grid-carousel {
+    position: relative;
+
+    & .owl-carousel {
+        & .item {
+            height: 235px;
+            margin-right: 10px;
+            margin-left: 10px;
+            background-position: center center;
+            background-size: cover;
+
+            & > a {
+                display: table;
+                width: 100%;
+                height: 100%;
+                padding: 15% 30px;
+                color: #fff;
+                text-decoration: none;
+
+                & > strong {
+                    display: table-cell;
+                    background: #000;
+                    background: rgba(0, 0, 0, 0.5);
+                    transition: background 0.25s ease-out;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                &:hover {
+                    & > strong {
+                        background: #000;
+                    }
+                }
+            }
+        }
+
+        &.owl-theme {
+            & .owl-controls {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+
+                & .owl-buttons {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    width: 100%;
+
+                    & > .owl-prev,
+                    & > .owl-next {
+                        position: absolute;
+                        top: 117.5px;
+                        display: block;
+                        width: 27px;
+                        height: 47px;
+                        margin: -23.5px 0 0 0;
+                        padding: 0;
+                        opacity: 1;
+                        border-radius: 0;
+                        background: #000;
+                        background: rgba(0, 0, 0, 0.5);
+                        color: #fff;
+                        transition: background 0.25s ease-out;
+
+                        &:hover {
+                            background: #000;
+                        }
+
+                        &:before {
+                            top: 0;
+                            left: 0;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            font-family: "FontAwesome", sans-serif;
+                            font-size: 18px;
+                            line-height: 47px;
+                            color: #fff;
+                            content: "";
+                            text-align: center;
+                        }
+                    }
+
+                    & > .owl-prev {
+                        left: 0;
+
+                        &:before {
+                            content: $fa-var-chevron-left;
+                            text-indent: -3px;
+                        }
+                    }
+                    & > .owl-next {
+                        right: 0;
+
+                        &:before {
+                            content: $fa-var-chevron-right;
+                            text-indent: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

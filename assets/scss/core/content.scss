@@ -22,4 +22,42 @@ body {
             padding-bottom: 0;
         }
     }
+
+    & > main {
+        background-image: url(../images/bg-paper.jpg);
+        background-repeat: repeat;
+        background-position: center center;
+
+        & .site-content {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+
+            & .site-content--primary {
+                & .widget-title {
+                    margin: 0 0 20px 0;
+                    font-size: 48px;
+                    line-height: 48px;
+                    font-weight: bold;
+                }
+
+                & h1,
+                & h2,
+                & h3,
+                & h4,
+                & h5,
+                & h6 {
+                    font-weight: bold;
+                    letter-spacing: -1px;
+                }
+
+                & p {
+                    margin: 0 0 30px 0;
+                    padding: 0;
+                    font-size: 22px;
+                    line-height: 25px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
 }

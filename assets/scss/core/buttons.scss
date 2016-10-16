@@ -1,0 +1,97 @@
+body {
+    & .btn.btn-primary,
+    & .btn.btn-secondary {
+        margin: 0;
+        padding: 8px 15px 9px 15px;
+        background-color: transparent;
+        border: 2px #fff solid;
+        border-radius: 0;
+        box-shadow: none;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 18px;
+        color: #fff;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: #fff;
+            border-color: #fff;
+            outline: none;
+            box-shadow: none;
+            color: $brand-red;
+        }
+
+        &.btn-lg {
+            padding: 10px 15px;
+            border-width: 3px;
+            box-shadow: none;
+            font-size: 26px;
+            line-height: 26px;
+        }
+    }
+
+    & .btn.btn-secondary {
+        border-color: $brand-red;
+        color: $brand-red;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $brand-red;
+            border-color: $brand-red;
+            outline: none;
+            color: #fff;
+        }
+    }
+
+    & .btn.btn-tertiary {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 25px;
+        color: $brand-gray;
+
+        &:after {
+            @include fa-icon;
+            position: relative;
+            top: -2px;
+            display: block;
+            float: right;
+            width: 28px;
+            height: 28px;
+            margin-left: 25px;
+            background-color: $brand-red;
+            border: 1px $brand-red solid;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 28px;
+            color: #fff;
+            content: $fa-var-chevron-right;
+            text-align: center;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            color: $brand-red;
+
+            &:after {
+                background-color: transparent;
+                border-color: $brand-red;
+                color: $brand-red;
+            }
+        }
+    }
+}

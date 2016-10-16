@@ -15,7 +15,7 @@
             set_post_thumbnail_size( 800, 600, true );
 
             add_image_size( 'apm-cta-banner', 1920, 683, true );
-            add_image_size( 'apm-feature-thumb', 540, 540, true );
+            add_image_size( 'apm-feature-thumb', 381, 253, true );
 
             register_nav_menus(
                 array(
@@ -96,6 +96,7 @@
         wp_enqueue_script( 'jquery' );
         wp_enqueue_script( 'apm-bootstrap', get_template_directory_uri() . '/assets/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
         wp_enqueue_script( 'apm-fresco', get_template_directory_uri() . '/assets/vendor/fresco/js/fresco/fresco.js', array( 'jquery' ), '2.2.1', true );
+        wp_enqueue_script( 'apm-owl', get_template_directory_uri() . '/assets/vendor/owl/owl-carousel/owl.carousel.js', array( 'jquery' ), '1.3.2', true );
         wp_enqueue_script( 'apm-framework', get_template_directory_uri() . '/assets/js/apm.js', array( 'jquery', 'apm-bootstrap', 'apm-fresco' ), '1.0', true );
     }
 
@@ -265,7 +266,9 @@
     }
 
 
-    function apm_link_postprocess ( $link ) {
+    function apm_link_postprocess ( $link, $full = false ) {
+        global $post;
+
         $data = array( 'url' => $link, 'selected' => false );
 
         if ( strlen( $link ) ) {
@@ -274,10 +277,32 @@
                 $link_id = intval( str_replace( 'post: ', '', $link ) );
 
                 if ( $link_id > 0 ) {
-                    $data[ 'url' ] = get_permalink( $link_id );
+                    if ( $full ) {
+                        $query = new WP_Query(
+                            array(
+                                'post__in'      => array( $link_id ),
+                                'post_type'     => array( 'post', 'page' ),
+                                'post_status'   => 'publish'
+                            )
+                        );
 
-                    if ( get_the_ID() == $link_id ) {
-                        $data[ 'selected' ] = true;
+                        if ( $query->have_posts() ) {
+                            $query->the_post();
+
+                            $data       = array(
+                                'title'     => get_the_title( $query->ID ),
+                                'excerpt'   => get_the_excerpt( $query->ID ),
+                                'url'       => get_the_permalink( $query->ID )
+                            );
+                        }
+
+                        wp_reset_postdata();
+                    } else {
+                        $data[ 'url' ] = get_permalink( $link_id );
+
+                        if ( get_the_ID() == $link_id ) {
+                            $data[ 'selected' ] = true;
+                        }
                     }
                 }
             }

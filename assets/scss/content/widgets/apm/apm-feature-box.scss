@@ -1,0 +1,29 @@
+.widget.widget_apm-feature-box {
+    & > .so-widget-apm-feature-box {
+        background-color: #fff;
+        border: 1px $brand-tan solid;
+        text-align: center;
+
+        & > .title {
+            display: block;
+            margin: 0;
+            padding: 25px 20px;
+            background-color: $brand-red;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        & > .content {
+            padding: 25px 45px;
+
+            & p {
+                margin: 0;
+                padding: 0 0 25px 0;
+                font-size: 22px;
+                line-height: 26px;
+            }
+        }
+    }
+}

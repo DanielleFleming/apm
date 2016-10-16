@@ -2,13 +2,13 @@
 	get_header();
 
 	get_template_part( 'parts/code', 'header' );
+	get_template_part( 'parts/title', 'all' );
+	get_template_part( 'parts/breadcrumbs', 'all' );
 	?>
 	<section class="container-fluid site-content">
 		<div class="row">
-			<article class="col-lg-12">
+			<article class="col-lg-12 site-content--primary" role="article">
 				<?php
-					get_template_part( 'parts/breadcrumbs', 'all' );
-
 					if ( have_posts() ) :
 						while ( have_posts() ) : the_post();
 							get_template_part( 'parts/content', 'page' );
