@@ -8,6 +8,11 @@
         padding: 20px 15px 20px 275px;
         color: #fff;
 
+        @media screen and (max-width: 767px) {
+            padding-right: 45px;
+            padding-left: 45px;
+        }
+
         &:before {
             position: absolute;
             top: 0;
@@ -20,6 +25,13 @@
             background-position: left center;
             background-size: 100%;
             content: "";
+
+            @media screen and (max-width: 767px) {
+                position: relative;
+                left: -16px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
         }
 
         & > h2.title {

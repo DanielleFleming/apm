@@ -2563,14 +2563,27 @@ body > header {
               line-height: 18px; } }
           @media screen and (max-width: 540px) {
             body > header > nav.navbar.navbar-default .navbar-header a.navbar-brand > strong {
-              padding-right: 60px;
+              width: 340px;
               font-size: 14px;
               line-height: 16px; } }
           @media screen and (max-width: 480px) {
             body > header > nav.navbar.navbar-default .navbar-header a.navbar-brand > strong {
+              width: auto;
               padding-right: 0;
               font-size: 0;
               line-height: 0; } }
+    body > header > nav.navbar.navbar-default .navbar-toggle {
+      z-index: 10001;
+      margin: 43px 32px 0 0;
+      padding: 14px 10px;
+      border: 3px #d4282f solid;
+      border-radius: 0; }
+      body > header > nav.navbar.navbar-default .navbar-toggle .icon-bar {
+        background-color: #d4282f; }
+      body > header > nav.navbar.navbar-default .navbar-toggle:hover, body > header > nav.navbar.navbar-default .navbar-toggle:focus {
+        background-color: #d4282f; }
+        body > header > nav.navbar.navbar-default .navbar-toggle:hover .icon-bar, body > header > nav.navbar.navbar-default .navbar-toggle:focus .icon-bar {
+          background-color: #fff; }
     body > header > nav.navbar.navbar-default .navbar-collapse,
     body > header > nav.navbar.navbar-default .navbar-form {
       clear: both;
@@ -2589,6 +2602,20 @@ body > header {
       margin: 0;
       padding: 0;
       background: transparent; }
+      @media screen and (max-width: 992px) {
+        body > header > nav.navbar.navbar-default .navbar-form {
+          position: relative;
+          top: auto;
+          right: auto;
+          height: auto;
+          margin: 12px 32px 24px 32px; } }
+      body > header > nav.navbar.navbar-default .navbar-form .form-group {
+        margin: 0; }
+        @media screen and (max-width: 992px) {
+          body > header > nav.navbar.navbar-default .navbar-form .form-group {
+            position: relative;
+            width: 100%;
+            margin: 0; } }
       body > header > nav.navbar.navbar-default .navbar-form .form-control {
         display: block;
         float: left;
@@ -2604,6 +2631,14 @@ body > header {
         line-height: 22px;
         color: #000;
         letter-spacing: -1px; }
+        @media screen and (max-width: 992px) {
+          body > header > nav.navbar.navbar-default .navbar-form .form-control {
+            float: none;
+            width: 100%;
+            padding-right: 56px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 20px; } }
         body > header > nav.navbar.navbar-default .navbar-form .form-control:active, body > header > nav.navbar.navbar-default .navbar-form .form-control:focus, body > header > nav.navbar.navbar-default .navbar-form .form-control:hover {
           outline: none; }
         body > header > nav.navbar.navbar-default .navbar-form .form-control:-moz-placeholder {
@@ -2625,10 +2660,18 @@ body > header {
         margin: 0;
         padding: 0 14px;
         border: none;
+        border-radius: 0;
         background: rgba(0, 0, 0, 0.2);
         font-size: 0;
         line-height: 0;
         color: #3e4543; }
+        @media screen and (max-width: 992px) {
+          body > header > nav.navbar.navbar-default .navbar-form .btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 48px;
+            background: transparent; } }
         body > header > nav.navbar.navbar-default .navbar-form .btn:before {
           display: inline-block;
           font: normal normal normal 14px/1 FontAwesome;
@@ -2652,6 +2695,11 @@ body > header {
         position: relative;
         z-index: 10000;
         margin-left: 32px; }
+        @media screen and (max-width: 992px) {
+          body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav {
+            overflow-x: hidden;
+            margin: 0;
+            border-top: 6px #d4282f solid; } }
         body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li {
           position: relative; }
           body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a {
@@ -2663,6 +2711,31 @@ body > header {
             font-weight: bold;
             line-height: 65px;
             color: #3e4543; }
+            body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a .menu-item-dropdown-toggle {
+              position: absolute;
+              top: 6px;
+              right: 32px;
+              display: none;
+              width: 48px;
+              height: 48px;
+              border: 3px #d4282f solid; }
+              body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a .menu-item-dropdown-toggle:before {
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                display: block;
+                font-size: 22px;
+                line-height: 42px;
+                color: #d4282f;
+                content: "";
+                text-align: center; }
+              body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a .menu-item-dropdown-toggle:hover {
+                background-color: #d4282f; }
+                body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a .menu-item-dropdown-toggle:hover:before {
+                  color: #fff; }
             @media screen and (max-width: 1300px) {
               body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a {
                 padding-right: 25px;
@@ -2676,19 +2749,39 @@ body > header {
                 padding-right: 15px;
                 padding-left: 15px;
                 font-size: 18px; } }
-          body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li.current-menu-item > a:before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            width: 100%;
-            height: 6px;
-            background: #d4282f;
-            font-size: 0;
-            line-height: 0;
-            content: ""; }
-          body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li:last-child > a {
-            border-right: 1px #c7b299 solid; }
+            @media screen and (max-width: 992px) {
+              body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a {
+                height: 60px;
+                padding-right: 32px;
+                padding-left: 32px;
+                border-left: none;
+                font-size: 20px;
+                line-height: 60px; }
+                body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > a .menu-item-dropdown-toggle {
+                  display: block; } }
+          body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li.open > a .menu-item-dropdown-toggle {
+            background-color: #d4282f; }
+            body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li.open > a .menu-item-dropdown-toggle:before {
+              color: #fff;
+              content: ""; }
+          @media screen and (min-width: 992px) {
+            body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li.current-menu-item > a:before {
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: block;
+              width: 100%;
+              height: 6px;
+              background: #d4282f;
+              font-size: 0;
+              line-height: 0;
+              content: ""; } }
+          @media screen and (max-width: 992px) {
+            body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li.current-menu-item > a {
+              color: #d4282f; } }
+          @media screen and (min-width: 992px) {
+            body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li:last-child > a {
+              border-right: 1px #c7b299 solid; } }
           body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > ul.sub-menu {
             position: absolute;
             z-index: 10001;
@@ -2703,6 +2796,14 @@ body > header {
             background: #fff;
             list-style: none;
             transition: opacity 0.25s ease-out; }
+            @media screen and (max-width: 992px) {
+              body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > ul.sub-menu {
+                position: static;
+                visibility: visible;
+                height: 0;
+                padding: 0;
+                border: none;
+                transition: all 0.25s ease-out; } }
             body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > ul.sub-menu > li {
               display: block;
               clear: both;
@@ -2734,9 +2835,21 @@ body > header {
                     padding-right: 15px;
                     padding-left: 15px;
                     font-size: 16px; } }
-          body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li:hover > ul.sub-menu {
-            visibility: visible;
-            opacity: 1; }
+                @media screen and (max-width: 992px) {
+                  body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > ul.sub-menu > li > a {
+                    padding-right: 32px;
+                    padding-left: 32px;
+                    font-size: 18px; } }
+          @media screen and (min-width: 992px) {
+            body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li:hover > ul.sub-menu {
+              visibility: visible;
+              opacity: 1; } }
+          @media screen and (max-width: 992px) {
+            body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li.open > ul.sub-menu {
+              visibility: visible;
+              height: auto;
+              padding: 12px 0;
+              opacity: 1; } }
 
 body .core-heading h1.core-heading--title {
   margin: 0 0 20px 0;
@@ -2756,6 +2869,30 @@ body .core-heading:after {
   height: 1px;
   background: #3e4543;
   content: ''; }
+
+@media screen and (max-width: 767px) {
+  .bg--hide-phone {
+    background-image: none !important; }
+  .bg--pos-right-center-phone {
+    background-position: right center !important; }
+  .bg--pos-left-center-phone {
+    background-position: right center !important; }
+  .bg--half-phone {
+    background-size: 50% !important; }
+  .bg--quarter-phone {
+    background-size: 25% !important; } }
+
+@media screen and (max-width: 992px) {
+  .bg--hide-tablet {
+    background-image: none !important; }
+  .bg--pos-right-center-tablet {
+    background-position: right center !important; }
+  .bg--pos-left-center-tablet {
+    background-position: left center !important; }
+  .bg--half-tablet {
+    background-size: 50% !important; }
+  .bg--quarter-tablet {
+    background-size: 25% !important; } }
 
 .widget.widget_apm-cta-footer > .so-widget-apm-cta-footer {
   padding: 25px 0;
@@ -2783,6 +2920,10 @@ body .core-heading:after {
     position: relative;
     padding: 20px 15px 20px 275px;
     color: #fff; }
+    @media screen and (max-width: 767px) {
+      .widget.widget_apm-cta-news > .so-widget-apm-cta-news {
+        padding-right: 45px;
+        padding-left: 45px; } }
     .widget.widget_apm-cta-news > .so-widget-apm-cta-news:before {
       position: absolute;
       top: 0;
@@ -2795,6 +2936,12 @@ body .core-heading:after {
       background-position: left center;
       background-size: 100%;
       content: ""; }
+      @media screen and (max-width: 767px) {
+        .widget.widget_apm-cta-news > .so-widget-apm-cta-news:before {
+          position: relative;
+          left: -16px;
+          height: 100px;
+          margin-bottom: 20px; } }
     .widget.widget_apm-cta-news > .so-widget-apm-cta-news > h2.title {
       margin: 0 0 20px 0;
       padding: 0;
@@ -2949,6 +3096,9 @@ body .core-heading:after {
 .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper {
   padding-right: 100px;
   padding-left: 100px; }
+  @media screen and (max-width: 767px) {
+    .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper {
+      padding-top: 30px !important; } }
   .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor * {
     text-shadow: none !important; }
   .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor h1,
@@ -2965,6 +3115,10 @@ body .core-heading:after {
     font-size: 48px;
     line-height: 52px;
     color: #3e4543; }
+    @media screen and (max-width: 767px) {
+      .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor h1 {
+        font-size: 42px;
+        line-height: 46px; } }
   .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor p {
     position: relative;
     margin: 0 0 20px 0;
@@ -2973,6 +3127,10 @@ body .core-heading:after {
     font-weight: bold;
     line-height: 24px;
     color: #3e4543; }
+    @media screen and (max-width: 767px) {
+      .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor p {
+        font-size: 18px;
+        line-height: 22px; } }
   .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor h1:before,
   .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor h2:before,
   .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor h3:before,
@@ -2993,3 +3151,8 @@ body .core-heading:after {
   .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor .btn.btn-secondary {
     margin-top: 15px;
     margin-bottom: 15px; }
+    @media screen and (max-width: 767px) {
+      .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor .btn.btn-primary,
+      .widget.widget_sow-layout-slider .sow-slider-base .sow-slider-image-wrapper .widget.widget_sow-editor .btn.btn-secondary {
+        display: block;
+        word-wrap: break-word; } }

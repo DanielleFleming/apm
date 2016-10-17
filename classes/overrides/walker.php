@@ -42,6 +42,7 @@ class APM_Nav_Walker_Accessibility_Ranger extends Walker_Nav_Menu {
                                             $append .
                                             $description .
                                         $args->link_after .
+                                        ( ( in_array( 'menu-item-has-children', $item->classes ) !== false ) ? '<span class="menu-item-dropdown-toggle"></span>' : '' ) .
                                     '</a>' .
                                 $args->after;
 

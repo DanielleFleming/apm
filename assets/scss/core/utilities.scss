@@ -1,0 +1,34 @@
+@media screen and (max-width: 767px) {
+    .bg--hide-phone {
+        background-image: none !important;
+    }
+    .bg--pos-right-center-phone {
+        background-position: right center !important;
+    }
+    .bg--pos-left-center-phone {
+        background-position: right center !important;
+    }
+    .bg--half-phone {
+        background-size: 50% !important;
+    }
+    .bg--quarter-phone {
+        background-size: 25% !important;
+    }
+}
+@media screen and (max-width: 992px) {
+    .bg--hide-tablet {
+        background-image: none !important;
+    }
+    .bg--pos-right-center-tablet {
+        background-position: right center !important;
+    }
+    .bg--pos-left-center-tablet {
+        background-position: left center !important;
+    }
+    .bg--half-tablet {
+        background-size: 50% !important;
+    }
+    .bg--quarter-tablet {
+        background-size: 25% !important;
+    }
+}
