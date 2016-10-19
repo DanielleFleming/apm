@@ -75,7 +75,7 @@ body {
 
             & .navbar-toggle {
                 z-index: 10001;
-                margin: 43px 32px 0 0;
+                margin: 43px 22px 0 0;
                 padding: 14px 10px;
                 border: 3px $brand-red solid;
                 border-radius: 0;
@@ -96,6 +96,8 @@ body {
 
             & .navbar-collapse,
             & .navbar-form {
+                position: relative;
+                z-index: 10000;
                 clear: both;
                 margin-right: -15px;
                 margin-left: -15px;
@@ -107,10 +109,10 @@ body {
 
             & .navbar-form {
                 position: absolute;
-                top: 43px;
+                top: -92px;
                 right: 36px;
                 display: block;
-                height: 134px;
+                height: auto;
                 margin: 0;
                 padding: 0;
                 background: transparent;
@@ -305,6 +307,12 @@ body {
                             }
                         }
 
+                        &:hover {
+                            & > a {
+                                color: $brand-red;
+                            }
+                        }
+
                         &.open {
                             & > a {
                                 & .menu-item-dropdown-toggle {
@@ -318,7 +326,9 @@ body {
                             }
                         }
 
-                        &.current-menu-item {
+                        &.current-menu-item,
+                        &.current-page-parent,
+                        &.current-page-ancestor {
                             & > a {
                                 @media screen and (min-width: 992px) {
                                     &:before {
@@ -411,6 +421,20 @@ body {
                                         padding-right: 32px;
                                         padding-left: 32px;
                                         font-size: 18px;
+                                    }
+                                }
+
+                                &.current-menu-item,
+                                &.current-page-parent,
+                                &.current-page-ancestor {
+                                    & > a {
+                                        background-color: transparent;
+                                        color: $brand-red;
+
+                                        &:hover {
+                                            background-color: transparent;
+                                            color: $brand-red;
+                                        }
                                     }
                                 }
                             }

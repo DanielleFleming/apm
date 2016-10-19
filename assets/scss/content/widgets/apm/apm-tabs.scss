@@ -1,0 +1,187 @@
+.widget.widget_apm-tabs {
+    & .nav.nav-tabs {
+        display: table;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        table-layout: fixed;
+        list-style: none;
+
+        @media screen and (max-width: 992px) {
+            display: block;
+        }
+
+        & li.tab-control {
+            flex: 1;
+            margin: 0 2px 0 0;
+            padding: 0;
+            border: none;
+            list-style: none;
+            text-align: left;
+            vertical-align: middle;
+
+            @media screen and (max-width: 992px) {
+                display: none;
+                width: 100%;
+                margin: 0;
+            }
+
+            &.active {
+                @media screen and (max-width: 992px) {
+                    display: block;
+                }
+
+                & > a {
+                    text-decoration: underline;
+                    
+                    @media screen and (max-width: 992px) {
+                        background-color: $brand-red;
+                        color: #fff;
+                        position: relative;
+                        text-decoration: none;
+
+                        &:before {
+                            @include fa-icon;
+                            
+                            display: block;
+                            position: absolute;
+                            content: $fa-var-chevron-down;
+                            right: 0;
+                            top: 0;
+                            text-align: center;
+                            padding: 10px 20px;
+                            border: none;
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+
+            &:before {
+                display: none;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            & > a {
+                display: inline-block;
+                min-height: 100%;
+                margin: 0;
+                padding: 25px 20px;
+                border: none;
+                border-radius: 0;
+                background: #fff;
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 20px;
+                color: $brand-red;
+                text-decoration: none;
+
+                @media screen and (max-width: 992px) {
+                    display: block;
+                    padding: 10px 20px;
+                    position: relative;
+                }
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            &.open {
+                & li.tab-control {
+                    display: block;
+                    
+                    &.active {
+                        & > a {
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .widget.widget_apm-tabs {
+        & .panel-grid {
+            margin-bottom: 0 !important;
+        }
+
+        & .nav.nav-tabs {
+            display: flex;
+            flex-direction: row;
+            background: #fff;
+
+            @media screen and (max-width: 992px) {
+                display: block;
+                flex: 0;
+            }
+
+            & li.tab-control {
+                float: none;
+
+                & a {
+                    position: relative;
+                    display: flex;
+                    background-color: $brand-red;
+                    color: #fff;
+
+                    @media screen and (max-width: 992px) {
+                        display: block;
+                        background-color: #fff;
+                        color: $brand-red;
+                    }
+                }
+
+                &.active {
+                    & a {
+                        text-decoration: none;
+
+                        @media screen and (max-width: 992px) {
+                            background-color: $brand-red;
+                            color: #fff;
+                        }
+
+                        &:after {
+                            position: absolute;
+                            bottom: -18px;
+                            left: 20px;
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            border-top: 18px solid $brand-red;
+                            border-right: 18px solid transparent;
+                            border-left: 18px solid transparent;
+                            content: "";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .tab-content {
+        & > .tab-pane {
+            & .widget.widget_sow-editor {
+                padding: 45px;
+                background: #fff;
+
+                @media screen and (max-width: 992px) {
+                    padding: 30px 20px;
+                }
+
+                & p {
+                    font-size: 20px;
+                    line-height: 24px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

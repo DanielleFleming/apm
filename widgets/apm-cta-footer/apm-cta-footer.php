@@ -21,6 +21,15 @@ class APM_CTA_Footer extends SiteOrigin_Widget {
             ),
 
             array(
+                'style' => array(
+                    'type' => 'select',
+                    'label' => __( 'Choose the style to be used for this call-to-action', 'apm' ),
+                    'default' => 'full-width-white',
+                    'options' => array(
+                        'small' => __( 'Small (Default)', 'apm' ),
+                        'large' => __( 'Large (with White Buttons)', 'apm' )
+                    )
+                ),
                 'content'   => array(
                     'type'          => 'tinymce'
                 ),
@@ -29,7 +38,7 @@ class APM_CTA_Footer extends SiteOrigin_Widget {
                     'label'         => __( 'Call to Action Buttons' , 'apm' ),
                     'item_name'     => __( 'Button', 'apm' ),
                     'item_label'    => array(
-                        'selector'     => "[id*='title']",
+                        'selector'     => "[id*='button']",
                         'update_event' => 'change',
                         'value_method' => 'val'
                     ),

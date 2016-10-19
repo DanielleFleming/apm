@@ -1,27 +1,30 @@
-<?php
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+        <div class="entry-meta">
+            <time><?php echo get_the_date( 'm/y' ); ?></time>
+        </div>
 
-    get_template_part( 'parts/title', 'all' );
+        <?php if ( !is_single() ) : ?>
+            <h3 class="entry-title">
+                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+            </h3>
+		<?php endif; ?>
+	</header>
 
-    $_content = get_the_content();
+	<?php if ( ( is_search() ) || ( is_archive() ) || ( is_home() ) ) : ?>
+        <div class="entry-summary">
+            <?php echo get_the_excerpt(); ?>
 
-    if ( strlen( trim( strip_tags( $_content ) ) ) ) {
-        ?>
-        <section class="container flex-content">
-            <div class="row">
-                <div class="col-lg-12">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </section>
-        <?php
-    }
-
-    if ( have_rows( 'type' ) ) {
-        while ( have_rows( 'type' ) ) {
-            the_row();
-
-            get_template_part( 'parts/acf/flex', get_row_layout() );
-        }
-    }
-
-?>
+            <a href="<?php the_permalink(); ?>" rel="bookmark"><?php _e( 'Read More', 'apm' ); ?></a>
+        </div>
+	<?php else : ?>
+        <div class="entry-content">
+            <?php
+                the_content( sprintf(
+                    __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'apm' ),
+                    the_title( '<span class="screen-reader-text">', '</span>', false )
+                ) );
+            ?>
+        </div>
+	<?php endif; ?>
+</div>

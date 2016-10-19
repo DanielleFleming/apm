@@ -1,0 +1,57 @@
+.widget.widget_apm-image-grid {
+    & .so-widget-apm-image-grid {
+        & > h3 {
+            padding: 15px 25px;
+            margin: 0;
+            background: $brand-red;
+            font-size: 24px;
+            line-height: 24px;
+            color: #fff;
+        }
+
+        & > ul {
+            display: table;
+            width: 100%;
+            margin: 0;
+            padding: 0 25px;
+            table-layout: fixed;
+            list-style: none;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+
+            & > li {
+                display: table-cell;
+                margin: 0;
+                padding: 15px;
+                list-style: none;
+                text-align: center;
+                vertical-align: middle;
+
+                @media screen and (max-width: 767px) {
+                    display: block;
+                }
+
+                & a {
+                    text-decoration: none;
+                }
+
+                & img {
+                    width: auto;
+                    max-width: 100%;
+                    max-height: 130px;
+
+                    @media screen and (max-width: 992px) {
+                        width: 100%;
+                        max-height: none;
+                    }
+                    @media screen and (max-width: 992px) {
+                        width: auto;
+                        max-height: none;
+                    }
+                }
+            }
+        }
+    }
+}

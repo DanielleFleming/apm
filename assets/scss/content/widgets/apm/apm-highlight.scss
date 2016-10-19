@@ -1,0 +1,91 @@
+.widget.widget_apm-highlight {
+    & > .so-widget-apm-highlight {
+        display: table;
+        width: 100%;
+
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
+
+        & > .title,
+        & > .content {
+            display: table-cell;
+            margin: 0;
+            padding: 30px 15px;
+            font-size: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+        }
+
+        & > .title {
+            width: 30%;
+            background: $brand-red;
+            color: #fff;
+            text-align: center;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+                width: auto;
+            }
+        }
+
+        & > .content {
+            width: 70%;
+            padding: 0;
+            background: #fff;
+            color: #000;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+                width: auto;
+            }
+
+            & > .content--inner {
+                display: table;
+                width: 100%;
+
+                @media screen and (max-width: 767px) {
+                    display: block;
+                }
+
+                & > .content--inner-text {
+                    display: table-cell;
+                    width: 70%;
+                    padding: 30px 60px;
+                    text-align: left;
+                    vertical-align: middle;
+
+                    & p {
+                        margin: 15px 0;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        display: block;
+                        width: auto;
+                        padding: 30px;
+                        text-align: center;
+                    }
+                }
+                & > .content--inner-image {
+                    display: table-cell;
+                    width: 30%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: auto 85%;
+
+                    @media screen and (max-width: 1024px) {
+                        background-size: 85%;
+                    }
+
+                    @media screen and (max-width: 992px) {
+                        background-size: 70%;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

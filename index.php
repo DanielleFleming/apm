@@ -1,21 +1,27 @@
 <?php
 	get_header();
 
-	if ( have_posts() ) :
-		// Start the Loop.
-		while ( have_posts() ) : the_post();
-
-			/*
-			 * Include the post format-specific template for the content. If you want to
-			 * use this in a child theme, then include a file called called content-___.php
-			 * (where ___ is the post format) and that will be used instead.
-			 */
-			get_template_part( 'parts/content', get_post_format() );
-
-		endwhile;
-	else :
-		get_template_part( 'content', 'none' );
-	endif;
-
+	get_template_part( 'parts/title', 'all' );
+	get_template_part( 'parts/breadcrumbs', 'all' );
+	?>
+	<section class="container-fluid site-content">
+		<div class="row">
+			<article class="col-md-8 site-content--primary" role="article">
+				<?php
+					if ( have_posts() ) :
+						while ( have_posts() ) : the_post();
+							get_template_part( 'parts/content', get_post_format() );
+						endwhile;
+					else :
+						get_template_part( 'parts/content', 'none' );
+					endif;
+				?>
+			</article>
+			<aside class="col-md-4 site-content--sidebar" role="complementary">
+				<?php dynamic_sidebar( 'sidebar-default' ); ?>
+			</aside>
+		</div>
+	</section>
+	<?php
 	get_footer();
 ?>

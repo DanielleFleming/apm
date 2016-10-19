@@ -1,4 +1,5 @@
 
+            <?php get_template_part( 'parts/content', 'request_quote' ); ?>
         </main>
 
 		<?php get_template_part( 'parts/footer', 'content' ); ?>

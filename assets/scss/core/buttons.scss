@@ -11,6 +11,7 @@ body {
         font-weight: bold;
         line-height: 18px;
         color: #fff;
+        text-decoration: none;
 
         &:hover,
         &:focus,
@@ -20,6 +21,7 @@ body {
             outline: none;
             box-shadow: none;
             color: $brand-red;
+            text-decoration: none;
         }
 
         &.btn-lg {
@@ -45,6 +47,40 @@ body {
         }
     }
 
+    & .btn.btn-inverse {
+        background-color: $brand-red;
+        border-color: $brand-red;
+        color: #fff;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: transparent;
+            border-color: $brand-red;
+            outline: none;
+            color: $brand-red;
+        }
+    }
+
+    & .btn.btn-inverse-alt {
+        background-color: $brand-red;
+        border-color: #fff;
+        color: #fff;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: transparent;
+            border-color: #fff;
+            outline: none;
+            color: #fff;
+        }
+    }
+
+    & .btn.btn-extended {
+        min-width: 300px;
+    }
+
     & .btn.btn-tertiary {
         position: relative;
         display: inline-block;
@@ -57,6 +93,7 @@ body {
         font-weight: bold;
         line-height: 25px;
         color: $brand-gray;
+        text-decoration: none;
 
         &:after {
             @include fa-icon;
@@ -86,6 +123,7 @@ body {
             outline: none;
             box-shadow: none;
             color: $brand-red;
+            text-decoration: none;
 
             &:after {
                 background-color: transparent;

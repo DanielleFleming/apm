@@ -6,38 +6,28 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
-    font-family: 'Helvetica Neue', 'HelveticaNeue', Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: normal;
+    font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 22px;
+    font-weight: normal;
     line-height: 26px;
     color: $brand-gray;
     letter-spacing: -0.5px;
 
     & > main {
-        padding-bottom: 45px;
-    }
-
-    &.home {
-        & > main {
-            padding-bottom: 0;
-        }
-    }
-
-    & > main {
         background-image: url(../images/bg-paper.jpg);
         background-repeat: repeat;
-        background-position: center center;
+        background-position: center top;
 
         & .site-content {
-            padding-left: 30px !important;
             padding-right: 30px !important;
+            padding-left: 30px !important;
 
             & .site-content--primary {
                 & .widget-title {
                     margin: 0 0 20px 0;
                     font-size: 48px;
-                    line-height: 48px;
                     font-weight: bold;
+                    line-height: 48px;
                 }
 
                 & h1,
@@ -54,9 +44,161 @@ body {
                     margin: 0 0 30px 0;
                     padding: 0;
                     font-size: 22px;
-                    line-height: 25px;
                     font-weight: normal;
+                    line-height: 25px;
+
+                    &.text-small {
+                        font-size: 18px;
+                        line-height: 21px;
+                    }
                 }
+
+                & .widget.widget_sow-editor,
+                & .entry-content {
+                    & ul,
+                    & ol {
+                        margin: 0 0 30px 0;
+                        padding: 0;
+                        list-style: none;
+
+                        & li {
+                            position: relative;
+                            margin: 0 0 5px 0;
+                            padding: 0 0 0 20px;
+                            list-style: none;
+                        }
+
+                        & ul,
+                        & ol {
+                            margin-left: 15px;
+                        }
+                    }
+
+                    & ul {
+                        & li {
+                            &:before {
+                                @include fa-icon;
+                                position: absolute;
+                                top: 8px;
+                                left: 0;
+                                display: block;
+                                font-size: 10px;
+                                line-height: 10px;
+                                color: $brand-red;
+                                content: $fa-var-circle;
+                            }
+                        }
+                    }
+
+                    & ol {
+                        & li {
+                            padding: 0 0 0 30px;
+                            counter-increment: orderedlist;
+
+                            &:before {
+                                position: absolute;
+                                top: 3px;
+                                left: 0;
+                                display: block;
+                                width: 22px;
+                                height: 22px;
+                                background-color: transparent;
+                                border: 1px $brand-red solid;
+                                border-radius: 50%;
+                                font-size: 14px;
+                                font-weight: bold;
+                                line-height: 19px;
+                                color: $brand-red;
+                                content: counter(orderedlist);
+                                text-align: center;
+                                text-indent: -1px;
+                            }
+                        }
+                    }
+                }
+
+                & .post {
+                    position: relative;
+                    margin-bottom: 30px;
+                    padding-bottom: 30px;
+                    padding-left: 160px;
+                    border-bottom: 1px $brand-gray solid;
+
+                    &.single {
+                        border-bottom: none;
+                    }
+
+                    & .entry-meta {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        width: 96px;
+                        height: 96px;
+                        background: $brand-red;
+                        font-size: 30px;
+                        font-weight: bold;
+                        line-height: 96px;
+                        color: #fff;
+                        text-align: center;
+                        letter-spacing: -2px;
+                    }
+
+                    & .entry-title {
+                        margin-top: 0;
+                        margin-bottom: 10px;
+
+                        & a {
+                            color: $brand-gray;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: $brand-gray;
+                            }
+                        }
+                    }
+                }
+            }
+            & .site-content--sidebar {
+                & .widget {
+                    margin-bottom: 60px;
+                    padding: 20px;
+                    background: #fff;
+                    background: rgba(255, 255, 255, 0.2);
+                    font-size: 18px;
+                    line-height: 20px;
+
+                    & .widget-title {
+                        margin: 0 0 20px 0;
+                        padding: 0 0 8px 0;
+                        border-bottom: 1px $brand-gray solid;
+                        font-size: 22px;
+                        line-height: 22px;
+                    }
+
+                    & ul {
+                        margin-left: 0;
+
+                        & li {
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    a {
+                        color: $brand-gray;
+                    }
+                }
+            }
+        }
+
+        & a {
+            color: $brand-red;
+            text-decoration: underline;
+
+            &:hover {
+                color: $brand-red;
+                text-decoration: none;
             }
         }
     }

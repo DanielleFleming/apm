@@ -1,0 +1,131 @@
+.widget.widget_apm-global-reach {
+    margin-bottom: 30px;
+
+    & > .so-widget-apm-global-reach {
+        & > svg {
+            display: block;
+            width: 85%;
+            height: auto;
+            margin: 0 auto;
+            opacity: 0;
+            transition: all 0.25s ease-out;
+
+            @media screen and (max-width: 992px) {
+                display: none;
+            }
+
+            & g {
+                &[data-hasqtip] {
+                    cursor: pointer;
+
+                    &.active,
+                    &:hover {
+                        & * {
+                            fill: $brand-red;
+                        }
+                    }
+                }
+
+                & * {
+                    fill: $brand-gray;
+                    transition: fill 0.25s ease-out;
+                }
+            }
+
+            &.enabled {
+                opacity: 1;
+            }
+        }
+
+        & ul.apm-global-reach-regions {
+            display: none;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            @media screen and (max-width: 992px) {
+                display: block;
+            }
+
+            & > li {
+                display: block;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                & > h4 {
+                    font-size: 24px;
+                    background: $brand-red;
+                    padding: 10px 15px;
+                    color: #fff;
+                    line-height: 24px;
+                }
+
+                & > div {
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+}
+
+.qtip-apm-global-reach {
+    border: none;
+    background: #fff;
+    color: #333;
+    font-size: 18px;
+    line-height: 21px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    & .qtip-content {
+        padding: 20px 30px 20px 20px;
+
+        & h4 {
+            margin-top: 0;
+            font-weight: bold;
+        }
+        & p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    & .qtip-close {
+        right: 5px;
+        top: 5px;
+        background: $brand-red;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        color: #fff;
+        border: 1px $brand-red solid;
+
+        & .ui-icon {
+            font-size: 0;
+            line-height: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+
+            &:after {
+                font-family: 'FontAwesome', sans-serif;
+                content: '\f00d';
+                font-size: 13px;
+                line-height: 18px;
+                font-weight: normal;
+                text-align: center;
+                display: block;
+                text-indent: -1px;
+            }
+        }
+
+        &:hover {
+            text-decoration: none;
+            background: transparent;
+
+            & .ui-icon {
+                color: $brand-red;
+            }
+        }
+    }
+}

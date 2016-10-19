@@ -1,0 +1,247 @@
+aside.site-content--quote-request {
+    position: absolute;
+    z-index: 9000;
+    top: 275px;
+    right: -420px;
+    margin: 0;
+    padding: 0;
+    transition: right 0.65s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+    @media screen and (max-width: 767px) {
+        position: static;
+        transition: none;
+    }
+
+    & > a {
+        position: absolute;
+        top: 0;
+        right: 465px;
+        display: block;
+        width: 125px;
+        height: 46px;
+        padding: 0;
+        border: 1px #fff solid;
+        background: $brand-gray;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 46px;
+        color: #fff;
+        transform: rotate(-90deg);
+        transform-origin: top right;
+        text-align: center;
+        white-space: nowrap;
+        text-decoration: none;
+
+        &:hover {
+            background: #fff;
+            color: $brand-gray;
+        }
+
+        @media screen and (max-width: 767px) {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 30px 0;
+            border: 3px $brand-red solid;
+            background: $brand-red;
+            font-size: 28px;
+            line-height: 24px;
+            transform: none;
+
+            &:hover {
+                border: 3px $brand-red solid;
+                background: #fff;
+                color: $brand-red;
+            }
+
+            &:after {
+                @include fa-icon;
+                display: inline-block;
+                padding-left: 10px;
+                font-weight: normal;
+                content: $fa-var-long-arrow-down;
+            }
+        }
+    }
+
+    &.open {
+        right: 0;
+
+        & > a {
+            background: #fff;
+            color: $brand-gray;
+
+            @media screen and (max-width: 767px) {
+                background: $brand-red;
+                color: #fff;
+
+                &:after {
+                    content: $fa-var-long-arrow-up;
+                }
+            }
+        }
+
+        & > section {
+            @media screen and (max-width: 767px) {
+                visibility: visible;
+                height: auto;
+                padding: 20px 0;
+                opacity: 1;
+            }
+        }
+    }
+
+    & > section {
+        position: absolute;
+        top: -35px;
+        right: 0;
+        width: 420px;
+        min-height: 195px;
+        border: 1px #fff solid;
+        background: $brand-gray;
+
+        @media screen and (max-width: 767px) {
+            position: static;
+            display: block;
+            visibility: hidden;
+            width: 100%;
+            height: 0;
+            min-height: 0;
+            padding: 0;
+            opacity: 0;
+            border: none;
+            transition: all 0.25s ease-out;
+        }
+
+        & > h3 {
+            margin: 0;
+            padding: 20px 20px 0 20px;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 24px;
+            color: #fff;
+
+            @media screen and (max-width: 767px) {
+                padding: 0 30px 0 30px;
+            }
+        }
+
+        & .nf-form-cont {
+            padding: 0 20px;
+
+            @media screen and (max-width: 767px) {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            & .nf-form-wrap {
+                & .nf-before-form-content {
+                    display: none;
+                }
+
+                & .nf-field-container {
+                    margin-bottom: 8px;
+
+                    & input.ninja-forms-field[type="text"],
+                    & input.ninja-forms-field[type="email"],
+                    & input.ninja-forms-field[type="number"],
+                    & input.ninja-forms-field[type="password"],
+                    & input.ninja-forms-field[type="tel"],
+                    & input.ninja-forms-field[type="url"],
+                    & select.ninja-forms-field,
+                    & textarea.ninja-forms-field {
+                        padding: 6px 10px;
+                        border: 1px #fff solid;
+                        font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                        font-size: 14px;
+                        font-weight: normal;
+                        line-height: 14px;
+                        color: $brand-gray;
+
+                        @media screen and (max-width: 767px) {
+                            padding: 10px;
+                        }
+                    }
+
+                    & .nf-field-container.submit-container {
+                        margin-bottom: 30px;
+                    }
+
+                    & .nf-field {
+                        & .nf-fail,
+                        & .nf-error {
+                            & input.ninja-forms-field[type="text"],
+                            & input.ninja-forms-field[type="email"],
+                            & input.ninja-forms-field[type="number"],
+                            & input.ninja-forms-field[type="password"],
+                            & input.ninja-forms-field[type="tel"],
+                            & input.ninja-forms-field[type="url"],
+                            & select.ninja-forms-field,
+                            & textarea.ninja-forms-field {
+                                border-color: $brand-red;
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 992px) {
+                        display: block !important;
+                        float: none !important;
+                        clear: both !important;
+                        width: 100% !important;
+                        margin-right: 0 !important;
+                        margin-left: 0 !important;
+                    }
+
+                    & .nf-after-field {
+                        display: none;
+                    }
+                }
+
+                & .ninja-forms-field.btn {
+                    float: none;
+                    width: 100%;
+                    margin-bottom: 8px;
+                    padding: 10px 16px;
+                    border-width: 2px;
+                    border-radius: 0;
+                    outline: none;
+                    font-size: 18px;
+                    font-weight: bold;
+                    line-height: 18px;
+
+                    @media screen and (max-width: 767px) {
+                        margin-bottom: 0;
+                    }
+
+                    &:focus,
+                    &:hover,
+                    &:active {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+                & .nf-after-form-content {
+                    display: none;
+                }
+
+                & .nf-response-msg {
+                    margin: 20px 0;
+                    padding: 15px 10px;
+                    border: 3px #fff solid;
+                    background: $brand-red;
+                    font-size: 16px;
+                    font-weight: bold;
+                    font-style: normal;
+                    line-height: 16px;
+                    color: #fff;
+                    text-align: center;
+                    
+                    &:empty {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

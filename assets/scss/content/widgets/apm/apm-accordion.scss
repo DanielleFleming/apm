@@ -1,0 +1,68 @@
+.widget.widget_apm-accordion {
+    & .panel-group {
+        margin-bottom: 0;
+
+        & .panel {
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+
+            & + .panel {
+                margin-top: 30px;
+            }
+
+            & .panel-heading {
+                color: #fff;
+                background: #d4282f;
+                border: none;
+                border-radius: 0;
+                padding: 15px 20px;
+
+                & .panel-title {
+                    font-size: 24px;
+                    line-height: 24px;
+
+                    & > a {
+                        text-decoration: none;
+                        position: relative;
+                        display: block;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: #fff;
+                        }
+
+                        &:after {
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            content: $fa-var-plus;
+                            font-family: 'FontAwesome', sans-serif;
+                            top: 0;
+                            font-size: 15px;
+                            height: 64px;
+                            width: 20px;
+                            text-align: center;
+                        }
+
+                        &[aria-expanded="true"] {
+                            &:after {
+                                content: $fa-var-minus;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .panel-body {
+                border: none;
+                padding: 35px 15px;
+
+                & p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

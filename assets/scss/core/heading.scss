@@ -1,12 +1,15 @@
 body {
     & .core-heading {
+        padding: 45px 30px 0 30px !important;
+
         & h1.core-heading--title {
-            margin: 0 0 20px 0;
+            margin: 0 0 15px 0;
             font-size: 48px;
             line-height: 48px;
             font-weight: bold;
         }
         & h2.core-heading--subtitle {
+            margin: 0 0 25px 0;
             font-size: 30px;
             line-height: 30px;
             font-weight: normal;
@@ -16,7 +19,8 @@ body {
             display: block;
             clear: both;
             width: 135px;
-            height: 1px;
+            height: 3px;
+            margin-bottom: 30px;
             background: $brand-gray;
             content: '';
         }

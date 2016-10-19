@@ -1,0 +1,175 @@
+body {
+    & .site-content {
+        .nf-form-wrap {
+            & .nf-field-label {
+                margin-bottom: 5px;
+
+                & label {
+                    position: relative;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 18px;
+                }
+            }
+
+            & .nf-error {
+                & .ninja-forms-field {
+                    border: 1px $brand-red solid;
+                }
+            }
+
+            & .nf-field-container {
+                & input.ninja-forms-field[type="text"],
+                & input.ninja-forms-field[type="email"],
+                & input.ninja-forms-field[type="number"],
+                & input.ninja-forms-field[type="password"],
+                & input.ninja-forms-field[type="tel"],
+                & input.ninja-forms-field[type="url"],
+                & select.ninja-forms-field,
+                & textarea.ninja-forms-field {
+                    height: 44px;
+                    padding: 10px;
+                    border: 1px $brand-gray solid;
+                    font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                    font-size: 18px;
+                    font-weight: normal;
+                    line-height: 18px;
+                    color: $brand-gray;
+                }
+                & textarea.ninja-forms-field {
+                    height: auto;
+                    min-height: 100px;
+                }
+
+                & .nf-field-container.submit-container {
+                    margin-bottom: 30px;
+                }
+
+                & .nf-field {
+                    & .nf-fail,
+                    & .nf-error {
+                        & input.ninja-forms-field[type="text"],
+                        & input.ninja-forms-field[type="email"],
+                        & input.ninja-forms-field[type="number"],
+                        & input.ninja-forms-field[type="password"],
+                        & input.ninja-forms-field[type="tel"],
+                        & input.ninja-forms-field[type="url"],
+                        & select.ninja-forms-field,
+                        & textarea.ninja-forms-field {
+                            border-color: $brand-red;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 992px) {
+                    display: block !important;
+                    float: none !important;
+                    clear: both !important;
+                    width: 100% !important;
+                    margin-right: 0 !important;
+                    margin-left: 0 !important;
+                }
+            }
+
+            & .ninja-forms-field.btn {
+                padding: 10px 16px;
+                border-width: 3px;
+                border-radius: 0;
+                outline: none;
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 24px;
+
+                &:focus,
+                &:hover,
+                &:active {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+
+            & .nf-after-field {
+                font-size: 14px;
+
+                & .nf-input-limit {
+                    margin-top: 0;
+                }
+                & .nf-error-wrap {
+                    background: $brand-red;
+                    color: #fff;
+
+                    & .nf-error-msg {
+                        margin: 0;
+                        padding: 1px 10px;
+                        font-style: italic;
+                        color: #fff;
+                    }
+                }
+            }
+
+            & .ninja-forms-req-symbol {
+                display: inline-block;
+                font-size: 0;
+                line-height: 0;
+
+                &:after {
+                    @include fa-icon;
+                    position: relative;
+                    top: -2px;
+                    display: block;
+                    font-size: 14px;
+                    line-height: 14px;
+                    color: $brand-red;
+                    content: $fa-var-asterisk;
+                }
+            }
+
+            & .nf-form-errors {
+                background: $brand-red;
+                font-size: 18px;
+                font-style: italic;
+                line-height: 22px;
+                color: #fff;
+
+                & .nf-error-msg {
+                    padding: 10px;
+                    font-size: 16px;
+                    line-height: 16px;
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+
+            & .nf-form-fields-required {
+                margin: 0 0 30px 0;
+                padding: 10px;
+                border: 1px $brand-gray solid;
+                font-size: 16px;
+                font-style: italic;
+                line-height: 16px;
+                text-align: right;
+
+                @media screen and (max-width: 992px) {
+                    text-align: center;
+                }
+            }
+
+            & .nf-response-msg {
+                margin: 0 0 20px 0;
+                padding: 20px 10px;
+                border: 3px #fff solid;
+                background: $brand-red;
+                font-size: 18px;
+                font-weight: bold;
+                font-style: normal;
+                line-height: 18px;
+                color: #fff;
+                text-align: center;
+                
+                &:empty {
+                    display: none;
+                }
+            }
+        }
+    }
+}

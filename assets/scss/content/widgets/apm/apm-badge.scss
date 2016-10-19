@@ -1,0 +1,44 @@
+.widget.widget_apm-badge {
+    & .content--inner {
+        display: table;
+        width: 100%;
+        padding: 30px;
+
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
+
+        & > .content--inner-badge {
+            display: table-cell;
+            padding-right: 35px;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+                padding-right: 0;
+            }
+
+            & img {
+                @media screen and (max-width: 767px) {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        & > .content--inner-text {
+            display: table-cell;
+            width: 100%;
+            vertical-align: middle;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+
+            & p {
+                margin: 15px 0;
+                font-size: 26px;
+                line-height: 30px;
+            }
+        }
+    }
+}

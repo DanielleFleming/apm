@@ -1,12 +1,17 @@
 .widget.widget_apm-cta-footer {
     & > .so-widget-apm-cta-footer {
-        padding: 25px 0;
+        padding: 50px 0;
         text-align: center;
 
         & p {
             margin-bottom: 20px;
             padding-left: 20%;
             padding-right: 20%;
+
+            @media screen and (max-width: 767px) {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
         }
 
         & menu {
@@ -19,7 +24,33 @@
             & .btn {
                 display: inline-block;
                 min-width: 300px;
-                margin: 0 15px;
+                margin: 0 15px 15px 15px;
+            }
+        }
+
+        & .style--large {
+            & p {
+                font-size: 30px;
+                line-height: 34px;
+            }
+
+            & menu {
+                padding-top: 15px;
+
+                & .btn {
+                    min-width: 250px;
+                    padding: 15px;
+                    border-color: #fff;
+                    color: #fff;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: #fff;
+                        border-color: #fff;
+                        color: $brand-gray;
+                    }
+                }
             }
         }
     }
