@@ -24,7 +24,7 @@
 
     if ( ( isset( $link[ 'title' ] ) ) && ( isset( $link[ 'url' ] ) ) && ( strlen( $link[ 'title' ] ) ) && ( strlen( $link[ 'url' ] ) ) ) :
         ?>
-        <h2 class="title"><?php _e( 'In the News', 'apm' ); ?></h2>
+        <h2 class="title"><a href="<?php the_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e( 'In the News', 'apm' ); ?></a></h2>
         <div class="apm-cta-news--preview">
             <h3><?php echo $link[ 'title' ]; ?></h3>
 

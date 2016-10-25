@@ -47,7 +47,7 @@
             padding-right: 100px;
             padding-left: 100px;
 
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 padding-top: 30px !important;
             }
 
@@ -73,7 +73,7 @@
                     line-height: 52px;
                     color: $brand-gray;
 
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         font-size: 42px;
                         line-height: 46px;
                     }
@@ -88,7 +88,7 @@
                     line-height: 24px;
                     color: $brand-gray;
 
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         font-size: 18px;
                         line-height: 22px;
                     }
@@ -123,7 +123,7 @@
                     margin-top: 15px;
                     margin-bottom: 15px;
 
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         display: block;
                         word-wrap: break-word;
                         white-space: normal;

@@ -167,7 +167,7 @@
                     padding-top: 15px;
                 }
 
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     display: block;
                 }
 
@@ -176,7 +176,7 @@
                     display: table-cell;
                     vertical-align: middle;
 
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         display: block;
                     }
                 }
@@ -191,7 +191,7 @@
                     width: 70%;
                     padding: 0 20px;
 
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         width: auto;
                         padding: 0;
                     }

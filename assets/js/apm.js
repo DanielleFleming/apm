@@ -21,8 +21,37 @@ var apm = {
 
         quote_request: {
             init: function() {
-                jQuery( '.site-content--quote-request > a' ).on( 'click', apm.fn.quote_request.toggle );
+                var quote_request       = jQuery( '.site-content--quote-request' );
+
+                if ( quote_request.length ) {
+                    var quote_request_top       = parseFloat( quote_request.position().top );
+                    var quote_request_handle    = jQuery( '> a', quote_request );
+
+                    quote_request_handle.on( 'click', apm.fn.quote_request.toggle );
+
+                    jQuery( window ).on( 'scroll', function( event ) {
+                        if ( !quote_request.hasClass( 'open' ) ) {
+                            quote_request.css( 'top', quote_request_top + parseInt( jQuery( window ).scrollTop() ) );
+                        } else {
+                            setTimeout( apm.fn.quote_request.check_visibility, 750 );
+                        }
+                    });
+
+                    setTimeout( function() { jQuery( window ).trigger( 'scroll' ) }, 750 );
+                }
             },
+
+            /*
+            check_visibility: function() {
+                var quote_request       = jQuery( '.site-content--quote-request' );
+
+                if ( ( quote_request.length ) && ( quote_request.hasClass( 'open' ) ) && ( !quote_request.is( ':animated' ) ) && ( !quote_request.isOnScreen() ) ) {
+                    quote_request.removeClass( 'open' );
+
+                    setTimeout( function() { jQuery( window ).trigger( 'scroll' ) }, 750 );
+                }
+            },
+            */
 
             toggle: function( event ) {
                 event.preventDefault();
@@ -32,6 +61,8 @@ var apm = {
 
                 if ( container.length ) {
                     container.toggleClass( 'open' );
+
+                    setTimeout( function() { jQuery( window ).trigger( 'scroll' ) }, 750 );
                 }
             }
         },

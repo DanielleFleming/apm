@@ -1,7 +1,13 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
         <div class="entry-meta">
-            <time><?php echo get_the_date( 'm/y' ); ?></time>
+            <time>
+                <?php if ( get_post_type() === 'post' ) : ?>
+                    <?php echo get_the_date( 'm/y' ); ?>
+                <?php else : ?>
+                    <?php _e( 'PAGE', 'apm' ); ?>
+                <?php endif; ?>
+            </time>
         </div>
 
         <?php if ( !is_single() ) : ?>

@@ -4,11 +4,11 @@
         text-align: center;
 
         & p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             padding-left: 20%;
             padding-right: 20%;
 
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 padding-right: 30px;
                 padding-left: 30px;
             }
@@ -24,7 +24,7 @@
             & .btn {
                 display: inline-block;
                 min-width: 300px;
-                margin: 0 15px 15px 15px;
+                margin: 15px 15px 0 15px;
             }
         }
 

@@ -71,7 +71,18 @@
             array(
                 'name'          => __( 'Blog Sidebar', 'apm' ),
                 'id'            => 'sidebar-default',
-                'description'   => __( 'Main sidebar that appears on the right of the blog area.', 'apm' ),
+                'description'   => __( 'Main sidebar that appears on the right of the blog/news area.', 'apm' ),
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h3 class="widget-title">',
+                'after_title'   => '</h3>',
+            )
+        );
+        register_sidebar(
+            array(
+                'name'          => __( 'Search Sidebar', 'apm' ),
+                'id'            => 'sidebar-search',
+                'description'   => __( 'Sidebar that appears on the right of the search results page.', 'apm' ),
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</div>',
                 'before_title'  => '<h3 class="widget-title">',
@@ -82,9 +93,20 @@
             array(
                 'name'          => __( 'Footer Sidebar', 'apm' ),
                 'id'            => 'sidebar-footer',
-                'description'   => __( 'Footer sidebar that appears just above the social and copyright areas of the footer.', 'apm' ),
+                'description'   => __( 'Footer sidebar that appears just above the social and copyright areas of the footer on every page of the site.', 'apm' ),
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</aside>',
+                'before_title'  => '<h3 class="widget-title">',
+                'after_title'   => '</h3>',
+            )
+        );
+        register_sidebar(
+            array(
+                'name'          => __( 'Blog Sidebar (Epilogue)', 'apm' ),
+                'id'            => 'sidebar-default-after',
+                'description'   => __( 'Displays as an epilogue on blog/news pages, at the bottom of the content area, spanning the full width of the page.', 'apm' ),
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</div>',
                 'before_title'  => '<h3 class="widget-title">',
                 'after_title'   => '</h3>',
             )
@@ -105,9 +127,10 @@
         wp_enqueue_script( 'jquery' );
         wp_enqueue_script( 'apm-bootstrap', get_template_directory_uri() . '/assets/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
         wp_enqueue_script( 'apm-fresco', get_template_directory_uri() . '/assets/vendor/fresco/js/fresco/fresco.js', array( 'jquery' ), '2.2.1', true );
-        wp_enqueue_script( 'apm-owl', get_template_directory_uri() . '/assets/vendor/owl/owl-carousel/owl.carousel.js', array( 'jquery' ), '1.3.2', true );
+        wp_enqueue_script( 'apm-slick', get_template_directory_uri() . '/assets/vendor/slick-carousel/slick/slick.min.js', array( 'jquery' ), '1.6.0', true );
         wp_enqueue_script( 'apm-qtip2', get_template_directory_uri() . '/assets/vendor/qtip2/jquery.qtip.min.js', array( 'jquery' ), '3.0.3', true );
-        wp_enqueue_script( 'apm-framework', get_template_directory_uri() . '/assets/js/apm.js', array( 'jquery', 'apm-bootstrap', 'apm-fresco' ), '1.0', true );
+        wp_enqueue_script( 'apm-onscreen', get_template_directory_uri() . '/assets/js/apm.onscreen.js', array( 'jquery' ), '1.0', true );
+        wp_enqueue_script( 'apm-framework', get_template_directory_uri() . '/assets/js/apm.js', array( 'jquery', 'apm-bootstrap', 'apm-fresco', 'apm-onscreen' ), '1.0', true );
     }
 
     add_action( 'wp_enqueue_scripts', 'apm_assets' );
@@ -144,6 +167,10 @@
 
         if ( is_single() ) {
             $classes[] = 'single';
+        }
+
+        if ( is_search() ) {
+            $classes[] = 'search-result';
         }
 
         return $classes;
@@ -212,6 +239,11 @@
                         'title'    => __( 'Large', 'apm' ),
                         'selector' => 'a',
                         'classes'  => 'btn-lg'
+                    ),
+                    array(
+                        'title'    => __( 'Wide', 'apm' ),
+                        'selector' => 'a',
+                        'classes'  => 'btn-wide'
                     )
                 )
             ),
@@ -289,6 +321,13 @@
 
     add_filter( 'siteorigin_widgets_widget_folders', 'apm_siteorigin_widgets_collection' );
 
+
+    function my_filter_function( $data ){
+        print_r( $data );
+
+        return $data;
+    }
+    add_filter( 'ninja_forms_localize_fields', 'my_filter_function', 10, 2 );
 
     function apm_icon_postprocess ( $icon_class ) {
         return str_replace( 'fontawesome-', 'fa-', $icon_class );

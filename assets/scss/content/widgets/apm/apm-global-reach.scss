@@ -2,11 +2,19 @@
     margin-bottom: 30px;
 
     & > .so-widget-apm-global-reach {
-        & > svg {
-            display: block;
+        @media screen and (min-width: 992px) {
+            position: relative;
             width: 85%;
-            height: auto;
+            height: 0;
             margin: 0 auto;
+            padding-top: 55%;
+            overflow: hidden;
+        }
+
+        & > svg {
+            position: absolute;
+            top: -50%;
+            left: 0;
             opacity: 0;
             transition: all 0.25s ease-out;
 

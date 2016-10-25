@@ -8,30 +8,9 @@
         padding: 20px 15px 20px 275px;
         color: #fff;
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             padding-right: 45px;
             padding-left: 45px;
-        }
-
-        &:before {
-            position: absolute;
-            top: 0;
-            left: 45px;
-            display: block;
-            width: 180px;
-            height: 100%;
-            background-image: url(../..//widgets/apm-cta-news/assets/images/icon-news.png);
-            background-repeat: no-repeat;
-            background-position: left center;
-            background-size: 100%;
-            content: "";
-
-            @media screen and (max-width: 767px) {
-                position: relative;
-                left: -16px;
-                height: 100px;
-                margin-bottom: 20px;
-            }
         }
 
         & > h2.title {
@@ -40,6 +19,38 @@
             font-size: 30px;
             font-weight: bold;
             line-height: 30px;
+
+            & a {
+                display: block;
+                color: #fff;
+                text-decoration: none;
+
+                &:hover {
+                    color: #fff;
+                    text-decoration: underline;
+                }
+
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 49px;
+                    display: block;
+                    width: 180px;
+                    height: 100%;
+                    background-image: url(../..//widgets/apm-cta-news/assets/images/icon-news.png);
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    background-size: 100%;
+                    content: "";
+
+                    @media screen and (max-width: 768px) {
+                        position: relative;
+                        left: -16px;
+                        height: 100px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
         }
 
         & .apm-cta-news--preview {

@@ -33,26 +33,25 @@
                 }
 
                 & > a {
-                    text-decoration: underline;
-                    
+                    background-color: $brand-red;
+                    color: #fff;
+
                     @media screen and (max-width: 992px) {
+                        position: relative;
                         background-color: $brand-red;
                         color: #fff;
-                        position: relative;
-                        text-decoration: none;
 
                         &:before {
                             @include fa-icon;
-                            
-                            display: block;
                             position: absolute;
-                            content: $fa-var-chevron-down;
-                            right: 0;
                             top: 0;
-                            text-align: center;
+                            right: 0;
+                            display: block;
                             padding: 10px 20px;
                             border: none;
                             background: transparent;
+                            content: $fa-var-chevron-down;
+                            text-align: center;
                         }
                     }
                 }
@@ -80,10 +79,14 @@
                 color: $brand-red;
                 text-decoration: none;
 
+                &:hover {
+                    background-color: $brand-red;
+                    color: #fff;
+                }
                 @media screen and (max-width: 992px) {
-                    display: block;
-                    padding: 10px 20px;
                     position: relative;
+                    display: block;
+                    padding: 10px 60px 10px 20px;
                 }
             }
         }
@@ -92,7 +95,7 @@
             &.open {
                 & li.tab-control {
                     display: block;
-                    
+
                     &.active {
                         & > a {
                             &:before {
@@ -106,6 +109,10 @@
     }
 
     & .widget.widget_apm-tabs {
+        padding: 12px;
+        border: 3px $brand-red solid;
+        background: #fff;
+
         & .panel-grid {
             margin-bottom: 0 !important;
         }
@@ -118,6 +125,11 @@
             @media screen and (max-width: 992px) {
                 display: block;
                 flex: 0;
+                border: 3px #fff solid;
+
+                &.open {
+                    border-color: $brand-red;
+                }
             }
 
             & li.tab-control {
@@ -129,16 +141,36 @@
                     background-color: $brand-red;
                     color: #fff;
 
+                    @media screen and (min-width: 992px) {
+                        padding: 19px 14px;
+                        border: 3px $brand-red solid;
+
+                        &:hover {
+                            background: #fff;
+                            color: $brand-red;
+                        }
+                    }
+
                     @media screen and (max-width: 992px) {
                         display: block;
                         background-color: #fff;
                         color: $brand-red;
+
+                        &:hover {
+                            background: $brand-red;
+                            color: #fff;
+                        }
                     }
                 }
 
                 &.active {
                     & a {
                         text-decoration: none;
+
+                        @media screen and (min-width: 992px) {
+                            background-color: $brand-red;
+                            color: #fff;
+                        }
 
                         @media screen and (max-width: 992px) {
                             background-color: $brand-red;

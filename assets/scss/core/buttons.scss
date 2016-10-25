@@ -94,13 +94,12 @@ body {
         line-height: 25px;
         color: $brand-gray;
         text-decoration: none;
+        white-space: nowrap;
 
         &:after {
             @include fa-icon;
             position: relative;
             top: -2px;
-            display: block;
-            float: right;
             width: 28px;
             height: 28px;
             margin-left: 25px;
@@ -131,5 +130,9 @@ body {
                 color: $brand-red;
             }
         }
+    }
+
+    &.btn.btn-wide {
+        min-width: 325px;
     }
 }

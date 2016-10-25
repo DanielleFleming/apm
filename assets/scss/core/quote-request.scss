@@ -7,7 +7,7 @@ aside.site-content--quote-request {
     padding: 0;
     transition: right 0.65s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
         position: static;
         transition: none;
     }
@@ -37,7 +37,7 @@ aside.site-content--quote-request {
             color: $brand-gray;
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             position: static;
             width: auto;
             height: auto;
@@ -54,12 +54,16 @@ aside.site-content--quote-request {
                 color: $brand-red;
             }
 
+            &:before {
+                content: 'Tap to ';
+            }
+
             &:after {
                 @include fa-icon;
                 display: inline-block;
                 padding-left: 10px;
                 font-weight: normal;
-                content: $fa-var-long-arrow-down;
+                content: $fa-var-arrow-circle-right;
             }
         }
     }
@@ -71,18 +75,14 @@ aside.site-content--quote-request {
             background: #fff;
             color: $brand-gray;
 
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 background: $brand-red;
                 color: #fff;
-
-                &:after {
-                    content: $fa-var-long-arrow-up;
-                }
             }
         }
 
         & > section {
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 visibility: visible;
                 height: auto;
                 padding: 20px 0;
@@ -100,7 +100,7 @@ aside.site-content--quote-request {
         border: 1px #fff solid;
         background: $brand-gray;
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             position: static;
             display: block;
             visibility: hidden;
@@ -121,7 +121,7 @@ aside.site-content--quote-request {
             line-height: 24px;
             color: #fff;
 
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 padding: 0 30px 0 30px;
             }
         }
@@ -129,7 +129,7 @@ aside.site-content--quote-request {
         & .nf-form-cont {
             padding: 0 20px;
 
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 padding-right: 30px;
                 padding-left: 30px;
             }
@@ -158,9 +158,13 @@ aside.site-content--quote-request {
                         line-height: 14px;
                         color: $brand-gray;
 
-                        @media screen and (max-width: 767px) {
+                        @media screen and (max-width: 768px) {
                             padding: 10px;
                         }
+                    }
+                    & select.ninja-forms-field {
+                        padding-left: 6px;
+                        padding-right: 6px;
                     }
 
                     & .nf-field-container.submit-container {
@@ -180,6 +184,10 @@ aside.site-content--quote-request {
                             & textarea.ninja-forms-field {
                                 border-color: $brand-red;
                             }
+                        }
+
+                        & .nf-field-label {
+                            display: none;
                         }
                     }
 
@@ -209,7 +217,7 @@ aside.site-content--quote-request {
                     font-weight: bold;
                     line-height: 18px;
 
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         margin-bottom: 0;
                     }
 

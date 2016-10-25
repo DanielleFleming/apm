@@ -142,16 +142,10 @@ body {
 
             & .nf-form-fields-required {
                 margin: 0 0 30px 0;
-                padding: 10px;
-                border: 1px $brand-gray solid;
                 font-size: 16px;
-                font-style: italic;
+                font-weight: bold;
                 line-height: 16px;
-                text-align: right;
-
-                @media screen and (max-width: 992px) {
-                    text-align: center;
-                }
+                text-align: left;
             }
 
             & .nf-response-msg {

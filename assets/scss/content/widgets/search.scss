@@ -1,0 +1,29 @@
+.widget.widget_search {
+    & form {
+        overflow: hidden;
+    }
+
+    & label {
+        display: block;
+
+        & .search-field {
+            width: 100%;
+            display: block;
+            border: 1px $brand-gray solid;
+            padding: 5px 10px;
+            color: $brand-gray;
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: normal;
+            outline: none;
+        }
+    }
+
+    & .search-submit {
+        @extend .btn.btn-secondary, .btn.btn-inverse;
+
+        float: right;
+    }
+
+}
