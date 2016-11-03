@@ -1,7 +1,7 @@
 <?php
-    
+
     get_template_part( 'parts/content', 'featured_image' );
-    
+
     if ( ( get_field( 'title-display' ) ) || ( is_home() ) || ( is_archive() ) || ( is_404() ) || ( is_search() ) || ( is_single() ) ) {
         $_page_id       = get_the_ID();
 

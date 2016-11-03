@@ -8,7 +8,7 @@ body {
     & > header {
         position: fixed;
         width: 100%;
-        z-index: 11000;
+        z-index: 20000;
         top: 0;
         left: 0;
         background-color: $brand-tan;
@@ -343,7 +343,9 @@ body {
 
                         &.current-menu-item,
                         &.current-page-parent,
-                        &.current-page-ancestor {
+                        &.current_page_parent,
+                        &.current-page-ancestor,
+                        &.current_page_ancestor {
                             & > a {
                                 @media screen and (min-width: 992px) {
                                     &:before {
@@ -441,7 +443,9 @@ body {
 
                                 &.current-menu-item,
                                 &.current-page-parent,
-                                &.current-page-ancestor {
+                                &.current_page_parent,
+                                &.current-page-ancestor,
+                                &.current_page_ancestor {
                                     & > a {
                                         background-color: transparent;
                                         color: $brand-red;

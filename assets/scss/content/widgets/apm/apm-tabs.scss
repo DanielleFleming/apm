@@ -122,6 +122,12 @@
             flex-direction: row;
             background: #fff;
 
+            @media screen and (min-width: 992px) {
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding-bottom: 20px;
+            }
+
             @media screen and (max-width: 992px) {
                 display: block;
                 flex: 0;

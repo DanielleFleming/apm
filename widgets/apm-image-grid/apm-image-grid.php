@@ -47,6 +47,9 @@ class APM_Image_Grid extends SiteOrigin_Widget {
                             'type'      => 'text',
                             'label'     => __( 'Enter the title/caption for this image', 'apm' )
                         ),
+                        'content' => array(
+                            'type'      => 'tinymce'
+                        ),
                         'image' => array(
                             'type'      => 'media',
                             'label'     => __( 'Choose an image to use', 'apm' ),

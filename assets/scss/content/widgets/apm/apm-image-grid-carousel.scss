@@ -45,6 +45,7 @@
         & .slick-prev,
         & .slick-next {
             position: absolute;
+            z-index: 1001;
             top: 140.5px;
             display: block;
             width: 27px;

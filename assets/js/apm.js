@@ -32,8 +32,6 @@ var apm = {
                     jQuery( window ).on( 'scroll', function( event ) {
                         if ( !quote_request.hasClass( 'open' ) ) {
                             quote_request.css( 'top', quote_request_top + parseInt( jQuery( window ).scrollTop() ) );
-                        } else {
-                            setTimeout( apm.fn.quote_request.check_visibility, 750 );
                         }
                     });
 
@@ -62,7 +60,15 @@ var apm = {
                 if ( container.length ) {
                     container.toggleClass( 'open' );
 
-                    setTimeout( function() { jQuery( window ).trigger( 'scroll' ) }, 750 );
+                    if ( container.hasClass( 'open' ) ) {
+                        jQuery( 'body' ).animate(
+                            {
+                                'scrollTop': 0
+                            },
+                            350);
+                    } else {
+                        setTimeout( function() { jQuery( window ).trigger( 'scroll' ) }, 750 );
+                    }
                 }
             }
         },
@@ -112,6 +118,7 @@ var apm = {
                                     position: {
                                         target: 'mouse',
                                         adjust: {
+                                            scroll: false,
                                             x: 5,
                                             y: 5
                                         }
@@ -122,8 +129,7 @@ var apm = {
                                     show: {
                                         event: 'click',
                                         modal: {
-                                            on: true,
-                                            blur: true
+                                            on: true
                                         }
                                     },
                                     style: {

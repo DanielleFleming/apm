@@ -4,7 +4,7 @@
 
     if ( !function_exists( 'apm_setup' ) ) :
 
-        function apm_setup () {
+        function apm_setup() {
             load_theme_textdomain( 'apm', get_template_directory() . '/languages' );
 
             add_editor_style( array( 'css/editor.css' ) );
@@ -66,7 +66,7 @@
     add_action( 'after_setup_theme', 'apm_setup' );
 
 
-    function apm_widgets_init () {
+    function apm_widgets_init() {
         register_sidebar(
             array(
                 'name'          => __( 'Blog Sidebar', 'apm' ),
@@ -116,7 +116,7 @@
     add_action( 'widgets_init', 'apm_widgets_init' );
 
 
-    function apm_assets () {
+    function apm_assets() {
         wp_enqueue_style( 'apm-style-bootstrap', get_template_directory_uri() . '/assets/vendor/bootstrap-sass/assets/stylesheets/bootstrap.css' );
         wp_enqueue_style( 'apm-style', get_template_directory_uri() . '/assets/css/theme.css' );
 
@@ -136,14 +136,14 @@
     add_action( 'wp_enqueue_scripts', 'apm_assets' );
 
 
-    function apm_assets_admin () {
+    function apm_assets_admin() {
         wp_enqueue_style( 'apm-style-admin', get_template_directory_uri() . '/assets/css/theme-admin.css' );
     }
 
     add_action( 'admin_enqueue_scripts', 'apm_assets_admin' );
 
 
-    function apm_body_classes ( $classes ) {
+    function apm_body_classes( $classes ) {
         if ( is_singular() && !is_front_page() ) {
             $classes[] = 'singular';
         }
@@ -160,7 +160,7 @@
     add_filter( 'body_class', 'apm_body_classes' );
 
 
-    function apm_post_classes ( $classes ) {
+    function apm_post_classes( $classes ) {
         if ( !post_password_required() && !is_attachment() && has_post_thumbnail() ) {
             $classes[] = 'has-post-thumbnail';
         }
@@ -179,7 +179,7 @@
     add_filter( 'post_class', 'apm_post_classes' );
 
 
-    function apm_wp_title ( $title, $sep ) {
+    function apm_wp_title( $title, $sep ) {
         global $paged, $page;
 
         if ( is_feed() ) {
@@ -206,7 +206,7 @@
     add_filter( 'wp_title', 'apm_wp_title', 10, 2 );
 
 
-    function apm_mce_buttons_2 ( $buttons ) {
+    function apm_mce_buttons_2( $buttons ) {
         array_push( $buttons, 'styleselect' );
 
         return $buttons;
@@ -215,7 +215,7 @@
     add_filter( 'mce_buttons_2', 'apm_mce_buttons_2' );
 
 
-    function apm_mce_before_init_insert_formats ( $init_array ) {
+    function apm_mce_before_init_insert_formats( $init_array ) {
         $style_formats = array(
             array(
                 'title' => 'Buttons',
@@ -251,9 +251,9 @@
                 'title' => 'Paragraphs',
                 'items' => array(
                     array(
-                        'title'     => __( 'Paragraph (Small)', 'apm' ),
-                        'selector'  => 'p',
-                        'classes'   => 'text-small'
+                        'title'    => __( 'Paragraph (Small)', 'apm' ),
+                        'selector' => 'p',
+                        'classes'  => 'text-small'
                     )
                 )
             )
@@ -267,7 +267,7 @@
     add_filter( 'tiny_mce_before_init', 'apm_mce_before_init_insert_formats' );
 
 
-    function apm_heading_format ( $title ) {
+    function apm_heading_format( $title ) {
         if ( strpos( $title, '|' ) !== false ) {
             $parts = explode( '|', $title );
 
@@ -280,13 +280,13 @@
     }
 
 
-    function apm_create_post_types () {
+    function apm_create_post_types() {
     }
 
     add_action( 'init', 'apm_create_post_types' );
 
 
-    function apm_add_widget_tabs ( $tabs ) {
+    function apm_add_widget_tabs( $tabs ) {
         $tabs[] = array(
             'title'  => __( 'AP+M Widgets', 'apm' ),
             'filter' => array(
@@ -300,7 +300,7 @@
     add_filter( 'siteorigin_panels_widget_dialog_tabs', 'apm_add_widget_tabs', 20 );
 
 
-    function apm_add_widget_icons ( $widgets ) {
+    function apm_add_widget_icons( $widgets ) {
         foreach ( $widgets as &$widget_data ) {
             if ( stripos( $widget_data[ 'title' ], 'ap+m' ) !== false ) {
                 $widget_data[ 'groups' ] = array( 'apm' );
@@ -313,7 +313,7 @@
     add_filter( 'siteorigin_panels_widgets', 'apm_add_widget_icons' );
 
 
-    function apm_siteorigin_widgets_collection ( $folders ) {
+    function apm_siteorigin_widgets_collection( $folders ) {
         $folders[] = get_template_directory() . '/widgets/';
 
         return $folders;
@@ -322,19 +322,12 @@
     add_filter( 'siteorigin_widgets_widget_folders', 'apm_siteorigin_widgets_collection' );
 
 
-    function my_filter_function( $data ){
-        print_r( $data );
-
-        return $data;
-    }
-    add_filter( 'ninja_forms_localize_fields', 'my_filter_function', 10, 2 );
-
-    function apm_icon_postprocess ( $icon_class ) {
+    function apm_icon_postprocess( $icon_class ) {
         return str_replace( 'fontawesome-', 'fa-', $icon_class );
     }
 
 
-    function apm_color_postprocess ( $color, $opacity = 100 ) {
+    function apm_color_postprocess( $color, $opacity = 100 ) {
         $data = '';
 
         if ( strlen( $color ) ) {
@@ -348,7 +341,7 @@
         return $data;
     }
 
-    function apm_hexcolor2rgb ( $hex ) {
+    function apm_hexcolor2rgb( $hex ) {
         $hex = str_replace( "#", "", $hex );
 
         if ( strlen( $hex ) == 3 ) {
@@ -366,3 +359,68 @@
 
         return $rgb;
     }
+
+
+    function apm_salesforce_capture_callback( $data ) {
+        if ( ( is_array( $data ) ) && ( isset( $data[ 'settings' ] ) ) && ( is_array( $data[ 'settings' ] ) ) && ( isset( $data[ 'settings' ][ 'title' ] ) ) && ( isset( $data[ 'fields' ] ) ) && ( is_array( $data[ 'fields' ] ) ) ) {
+            $form_title         = trim( strtolower( $data[ 'settings' ][ 'title' ] ) );
+            $fields             = array();
+            $response           = array(
+                'oid'               => '00DA0000000HJEq',
+                'LeadSource'        => 'Company Website'
+            );
+
+            switch ( $form_title ) {
+                case 'contact us' :
+                    $fields         = array(
+                        'firstname'                 => 'FirstName',
+                        'lastname'                  => 'LastName',
+                        'email'                     => 'Email',
+                        'listcountry'               => 'Country__c',
+                        'tell_us_about_your_needs'  => 'Needs__c'
+                    );
+                    break;
+
+                case 'request a quote' :
+                    $fields         = array(
+                        'firstname'                     => 'FirstName',
+                        'lastname'                      => 'LastName',
+                        'company'                       => 'Company',
+                        'email'                         => 'Email',
+                        'phone'                         => 'Phone',
+                        'country'                       => 'Country__c',
+                        'state_province_1'              => 'State_Province__c',
+                        'zip_code_1'                    => 'Zip_Code__c',
+                        'engine_model_1'                => 'Engine_Model__c',
+                        'parts_or_maintenance_needed_1' => 'Parts_or_Maintenance_Needed__c',
+                        'tell_us_about_your_needs'      => 'Needs__c'
+                    );
+                    break;
+            }
+
+            if ( count( $fields ) ) {
+                foreach ( $fields as $source_key => $salesforce_key ) {
+                    foreach ( $data[ 'fields' ] as $source_field ) {
+                        if ( $source_field[ 'key' ] == $source_key ) {
+                            $response[ $salesforce_key ]    = $source_field[ 'value' ];
+                            break;
+                        }
+                    }
+                }
+            }
+
+            $curl       = curl_init();
+
+            curl_setopt( $curl, CURLOPT_URL, 'https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8' );
+            curl_setopt( $curl, CURLOPT_POST, true );
+            curl_setopt( $curl, CURLOPT_POSTFIELDS, http_build_query( $response ) );
+            curl_setopt( $curl, CURLOPT_HEADER, false );
+            curl_setopt( $curl, CURLOPT_RETURNTRANSFER, false );
+            curl_setopt( $curl, CURLOPT_FOLLOWLOCATION, true );
+
+            $result     = curl_exec( $curl );
+
+            curl_close( $curl );
+        }
+    }
+    add_action( 'apm_salesforce_capture', 'apm_salesforce_capture_callback' );

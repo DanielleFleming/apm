@@ -5,7 +5,7 @@ aside.site-content--quote-request {
     right: -420px;
     margin: 0;
     padding: 0;
-    transition: right 0.65s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    transition: none;
 
     @media screen and (max-width: 768px) {
         position: static;
@@ -69,7 +69,9 @@ aside.site-content--quote-request {
     }
 
     &.open {
+        top: 275px !important;
         right: 0;
+        transition: right 0.65s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 
         & > a {
             background: #fff;
@@ -82,6 +84,10 @@ aside.site-content--quote-request {
         }
 
         & > section {
+            height: auto;
+            min-height: 195px;
+            overflow: visible;
+            
             @media screen and (max-width: 768px) {
                 visibility: visible;
                 height: auto;
@@ -96,7 +102,8 @@ aside.site-content--quote-request {
         top: -35px;
         right: 0;
         width: 420px;
-        min-height: 195px;
+        height: 0;
+        overflow: hidden;
         border: 1px #fff solid;
         background: $brand-gray;
 

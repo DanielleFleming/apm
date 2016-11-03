@@ -17,13 +17,26 @@
 
                 ?>
                 <li>
-                    <?php
-                        $image      = wp_get_attachment_image_url( $item[ 'image' ], 'full' );
+                    <div class="image">
+                        <div class="image--inner">
+                            <?php
+                                $image      = wp_get_attachment_image_url( $item[ 'image' ], 'full' );
 
-                        if ( strlen( $item[ 'linkage' ] ) ) :
-                            ?><a href="<?php echo sow_esc_url( $item[ 'linkage' ] ); ?>" target="<?php echo $item[ 'target' ]; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $item[ 'title' ]; ?>"></a><?php
-                        else :
-                            ?><img src="<?php echo $image; ?>" alt="<?php echo $item[ 'title' ]; ?>"><?php
+                                if ( strlen( $item[ 'linkage' ] ) ) :
+                                    ?><a href="<?php echo sow_esc_url( $item[ 'linkage' ] ); ?>" target="<?php echo $item[ 'target' ]; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $item[ 'title' ]; ?>"></a><?php
+                                else :
+                                    ?><img src="<?php echo $image; ?>" alt="<?php echo $item[ 'title' ]; ?>"><?php
+                                endif;
+                            ?>
+                        </div>
+                    </div>
+                    <?php
+                        if ( strlen( $item[ 'content' ] ) ) :
+                            ?>
+                            <div class="notes">
+                                <?php echo wpautop( $item[ 'content' ] ); ?>
+                            </div>
+                            <?php
                         endif;
                     ?>
                 </li>
