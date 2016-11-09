@@ -367,33 +367,34 @@
             $fields             = array();
             $response           = array(
                 'oid'               => '00DA0000000HJEq',
-                'LeadSource'        => 'Company Website'
+                'retURL'            => 'http://apm4parts.com/',
+                'lead_source'       => 'Company Website'
             );
 
             switch ( $form_title ) {
                 case 'contact us' :
                     $fields         = array(
-                        'firstname'                 => 'FirstName',
-                        'lastname'                  => 'LastName',
-                        'email'                     => 'Email',
-                        'listcountry'               => 'Country__c',
-                        'tell_us_about_your_needs'  => 'Needs__c'
+                        'first_name'                => 'first_name',
+                        'last_name'                 => 'last_name',
+                        'email'                     => 'email',
+                        'country'                   => '00NG000000FnX9s',
+                        'needs'                     => '00NG000000FNXfj'
                     );
                     break;
 
                 case 'request a quote' :
                     $fields         = array(
-                        'firstname'                     => 'FirstName',
-                        'lastname'                      => 'LastName',
-                        'company'                       => 'Company',
-                        'email'                         => 'Email',
-                        'phone'                         => 'Phone',
-                        'country'                       => 'Country__c',
-                        'state_province_1'              => 'State_Province__c',
-                        'zip_code_1'                    => 'Zip_Code__c',
-                        'engine_model_1'                => 'Engine_Model__c',
-                        'parts_or_maintenance_needed_1' => 'Parts_or_Maintenance_Needed__c',
-                        'tell_us_about_your_needs'      => 'Needs__c'
+                        'first_name'                    => 'first_name',
+                        'last_name'                     => 'last_name',
+                        'company'                       => 'company',
+                        'email'                         => 'email',
+                        'phone'                         => 'phone',
+                        'country'                       => '00NG000000FnX9s',
+                        'state_province'                => '00NG000000FNYQe',
+                        'zip_code'                      => '00NG000000FNYQj',
+                        'engine_model'                  => '00NG000000FNEGn',
+                        'date_needed'                   => '00NG000000FNXKR',
+                        'needs'                         => '00NG000000FNXfj'
                     );
                     break;
             }
