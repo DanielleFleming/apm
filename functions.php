@@ -368,7 +368,9 @@
             $response           = array(
                 'oid'               => '00DA0000000HJEq',
                 'retURL'            => 'http://apm4parts.com/',
-                'lead_source'       => 'Company Website'
+                'lead_source'       => 'Company Website',
+                'debug'             => 1,
+                'debugEmail'        => 'danielle@dreamfactoryagency.com'
             );
 
             switch ( $form_title ) {
@@ -396,13 +398,16 @@
                         'date_needed'                   => '00NG000000FNXKR',
                         'needs'                         => '00NG000000FNXfj'
                     );
+
+                    // add Lead_Status__c form that is required for bypassing default Salesforce rules for "Date Needed" field.
+                    $response[ '00NG000000FnvvK' ]      = 'Open';
                     break;
             }
-
+            
             if ( count( $fields ) ) {
                 foreach ( $fields as $source_key => $salesforce_key ) {
                     foreach ( $data[ 'fields' ] as $source_field ) {
-                        if ( $source_field[ 'key' ] == $source_key ) {
+                        if ( $source_field[ 'settings' ][ 'key' ] == $source_key ) {
                             $response[ $salesforce_key ]    = $source_field[ 'value' ];
                             break;
                         }
