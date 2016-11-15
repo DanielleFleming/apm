@@ -389,7 +389,7 @@
                         'first_name'                    => 'first_name',
                         'last_name'                     => 'last_name',
                         'company'                       => 'company',
-                        'email'                         => 'email',
+                        'email'                         => 'Email',
                         'phone'                         => 'phone',
                         'country'                       => '00NG000000FnX9s',
                         'state_province'                => '00NG000000FNYQe',
