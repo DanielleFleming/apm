@@ -387,17 +387,17 @@
 
                 case 'request a quote' :
                     $fields         = array(
-                        'first_name'                    => 'first_name',
-                        'last_name'                     => 'last_name',
-                        'company'                       => 'company',
-                        'email'                         => 'email',
-                        'phone'                         => 'phone',
-                        'country'                       => '00NG000000FnX9s',
-                        'state_province'                => '00NG000000FNYQe',
-                        'zip_code'                      => '00NG000000FNYQj',
-                        'engine_model'                  => '00NG000000FNEGn',
-                        'date_needed'                   => '00NG000000FNXKR',
-                        'needs'                         => '00NG000000FNXfj'
+                        'first_name'                => 'first_name',
+                        'last_name'                 => 'last_name',
+                        'company'                   => 'company',
+                        'email'                     => 'email',
+                        'phone'                     => 'phone',
+                        'country'                   => '00NG000000FnX9s',
+                        'state_province'            => '00NG000000FNYQe',
+                        'zip_code'                  => '00NG000000FNYQj',
+                        'engine_model'              => '00NG000000FNEGn',
+                        'date_needed'               => '00NG000000FNXKR',
+                        'needs'                     => '00NG000000FNXfj'
                     );
 
                     // add Lead_Status2__c form that is required for bypassing default Salesforce rules for "Date Needed" field.
