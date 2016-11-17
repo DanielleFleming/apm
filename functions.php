@@ -370,7 +370,8 @@
                 'retURL'            => 'http://apm4parts.com/',
                 'lead_source'       => 'Company Website',
                 'debug'             => 1,
-                'debugEmail'        => 'danielle@dreamfactoryagency.com'
+                'debugEmail'        => 'danielle@dreamfactoryagency.com',
+                'lead_status__c'    => true
             );
 
             switch ( $form_title ) {
@@ -399,7 +400,7 @@
                         'needs'                         => '00NG000000FNXfj'
                     );
 
-                    // add Lead_Status__c form that is required for bypassing default Salesforce rules for "Date Needed" field.
+                    // add Lead_Status2__c form that is required for bypassing default Salesforce rules for "Date Needed" field.
                     $response[ '00NG000000FnvvK' ]      = 'Open';
                     break;
             }
