@@ -21,7 +21,7 @@ aside.site-content--quote-request {
         height: 46px;
         padding: 0;
         border: 1px #fff solid;
-        background: $brand-gray;
+        background: $brand-yellow;
         font-size: 18px;
         font-weight: bold;
         line-height: 46px;
@@ -135,6 +135,7 @@ aside.site-content--quote-request {
 
         & .nf-form-cont {
             padding: 0 20px;
+            color: #fff;
 
             @media screen and (max-width: 768px) {
                 padding-right: 30px;
@@ -176,6 +177,11 @@ aside.site-content--quote-request {
 
                     & .nf-field-container.submit-container {
                         margin-bottom: 30px;
+                    }
+
+                    &.html-container {
+                        font-size: 18px;
+                        line-height: 21px;
                     }
 
                     & .nf-field {
