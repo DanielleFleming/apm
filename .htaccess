@@ -16,6 +16,7 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^162\.242\.235\.222
 RewriteRule (.*) http://www.apm4parts.com/$1 [R=301,L]
 
+Redirect 301 /pow-engineering/ /
 Redirect 301 /ge-lm-gas-turbine-engine-fuel-nozzles /aeroderivative/
 Redirect 301 /lm1600-stig-dual-circuit-fuel-nozzles /aeroderivative/
 Redirect 301 /power-tech/ /
