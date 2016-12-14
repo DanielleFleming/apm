@@ -23,7 +23,7 @@
                             'menu_class'     => 'nav navbar-nav',
                             'items_wrap'     => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
                             'walker'         => new APM_Nav_Walker_Accessibility_Ranger(),
-                            'depth'          => 2
+                            'depth'          => 3
                         )
                     );
                 ?>
