@@ -3044,7 +3044,14 @@ body {
                 color: #d4282f; } }
             @media screen and (min-width: 992px) {
               body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li:last-child > a {
-                border-right: 1px #c7b299 solid; } }
+                border-right: 1px #c7b299 solid;
+				color: #FFF;
+				background-color:#d4282f }
+				body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li:last-child > a:hover {
+                border-right: 1px #c7b299 solid;
+				color: #d4282f;
+				background-color:#FFF }
+			}
             body > header > nav.navbar.navbar-default .navbar-collapse ul.navbar-nav > li > ul.sub-menu {
               position: absolute;
               z-index: 10001;
