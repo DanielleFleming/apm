@@ -370,7 +370,7 @@
                 'retURL'            => 'http://apm4parts.com/',
                 'lead_source'       => 'Company Website',
                 'debug'             => 1,
-                'debugEmail'        => 'danielle@dreamfactoryagency.com',
+                'debugEmail'        => 'cadie@dreamfactoryagency.com',
                 'lead_status__c'    => true
             );
 
@@ -404,7 +404,7 @@
                     $response[ '00NG000000FnvvK' ]      = 'Open';
                     break;
             }
-            
+
             if ( count( $fields ) ) {
                 foreach ( $fields as $source_key => $salesforce_key ) {
                     foreach ( $data[ 'fields' ] as $source_field ) {
@@ -418,7 +418,7 @@
 
             $curl       = curl_init();
 
-            curl_setopt( $curl, CURLOPT_URL, 'https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8' );
+            curl_setopt( $curl, CURLOPT_URL, 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8' );
             curl_setopt( $curl, CURLOPT_POST, true );
             curl_setopt( $curl, CURLOPT_POSTFIELDS, http_build_query( $response ) );
             curl_setopt( $curl, CURLOPT_HEADER, false );
