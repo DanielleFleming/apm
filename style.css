@@ -5,3 +5,11 @@ Author: Aviation, Power & Marine, Inc.
 Version: 1.0
 Text Domain: apm
 */
+
+/* OUTAGES PAGE STYLES
+ * -------------------------- */
+
+ #pg-6973-1 .widget.widget_apm-tabs .nav.nav-tabs {
+     width: auto;
+     margin: 0 auto;
+ }
