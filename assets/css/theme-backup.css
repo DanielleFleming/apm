@@ -4731,48 +4731,6 @@ body .site-content .nf-form-wrap .nf-response-msg {
 
 /* OUTAGES PAGE STYLES
  * -------------------------- */
-
-   #how-it-works-widget .panel-grid .panel-grid-cell {
-     padding: 0 0;
-   }
-  #how-it-works-widget .steps-bg {
-    background: #d4282f;
-    border: 2px solid #fff;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-  }
-  #how-it-works-widget .step-one:after, #how-it-works-widget .step-two:after {
-    display: block;
-    position: absolute;
-    z-index: 5;
-    content: '';
-    top: 50%;
-    right: -3px;
-    border: none;
-    background-color: #d4282f;
-    width: 1.14285714em;
-    height: 1.14285714em;
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 0px 4px 4px 0px;
-    -webkit-transform: translateY(-50%) translateX(50%) rotate(-45deg);
-    -ms-transform: translateY(-50%) translateX(50%) rotate(-45deg);
-    transform: translateY(-50%) translateX(50%) rotate(-45deg);
-    width: 20px;
-    height: 20px;
-  }
-  .widget-text-box {
-    border: 2px solid white;
-    padding: 60px;
-    min-height: 380px;
-    border-top: 0px;
-    border-right: 0;
-  }
-
    #pg-6973-1 .widget.widget_apm-tabs .nav.nav-tabs {
        width: auto;
        margin: 0 auto;
