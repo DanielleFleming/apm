@@ -29,7 +29,6 @@
         a.appendChild(r);
     })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-
     </head>
     <body <?php body_class(); ?>>
 		<?php get_template_part( 'parts/header', 'navigation' ); ?>

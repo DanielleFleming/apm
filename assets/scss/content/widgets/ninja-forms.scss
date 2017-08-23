@@ -147,32 +147,36 @@ body {
                 line-height: 16px;
                 text-align: left;
             }
+        }
+    }
 
-            & .nf-response-msg {
-                margin: 0 0 20px 0;
-                padding: 20px 10px;
-                border: 3px #fff solid;
-                background: $brand-red;
-                font-size: 18px;
-                font-weight: bold;
-                font-style: normal;
-                line-height: 18px;
-                color: #fff;
-                text-align: center;
-                
-                &:empty {
-                    display: none;
-                }
+    & .nf-response-msg {
+        margin: 0 0 20px 0;
+        padding: 20px 10px;
+        border: 3px #fff solid;
+        background: $brand-red;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        line-height: 18px;
+        color: #fff;
+        text-align: center;
 
-                & h1,
-                & h2,
-                & h3,
-                & h4,
-                & h5,
-                & h6 {
-                    margin-top: 5px !important;
-                }
-            }
+        &:empty {
+            display: none;
+        }
+
+        & p {
+            margin-bottom: 10px !important;
+        }
+
+        & h1,
+        & h2,
+        & h3,
+        & h4,
+        & h5,
+        & h6 {
+            margin-top: 5px !important;
         }
     }
 }

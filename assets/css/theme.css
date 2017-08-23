@@ -2454,7 +2454,8 @@ body {
   body > main {
     background-image: url(../images/bg-paper.jpg);
     background-repeat: repeat;
-    background-position: center top; }
+    background-position: center top;
+  	padding-top: 50px; }
     body > main .site-content {
       padding-right: 30px !important;
       padding-left: 30px !important; }
@@ -2754,6 +2755,45 @@ body > footer {
     line-height: 22px;
     color: #3e4543;
     font-weight: normal; }
+
+    div#topbar {
+      background: #d4282f;
+      color: #fff;
+    }
+    div#topbar p {
+    	display: inline-block;
+    	margin: 8px;
+    	font-size: 18px;
+    	font-weight: bold;
+    }
+    a.topbar-button {
+    	color: #fff;
+    	background: #d4282f;
+      border: 2px solid #fff;
+    	padding: 6px 10px 6px 10px;
+    	display: inline-block;
+    	margin-left: 20px;
+    	font-size: 16px;
+    }
+    button#topbar-close {
+      position: absolute;
+    	right: 20px;
+    	top: 12px;
+    	background: none;
+    	box-shadow: none;
+    	outline: none;
+    	border: 0;
+    	font-size: 32px;
+    	color: #fff;
+    }
+    button#topbar-close:hover, button#topbar-close:active, button#topbar-close:focus  {
+    	opacity: .7;
+    }
+    a.topbar-button:hover, a.topbar-button:focus, a.topbar-button:active {
+    	background: #fff;
+    	text-decoration: none;
+      color: #3e4543;
+    }
 
 body {
   margin-top: 190px; }

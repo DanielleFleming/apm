@@ -1,5 +1,5 @@
 <aside class="site-content--quote-request">
-    <a href="javascript:;"><?php _e( 'Contact Us', 'apm' ); ?></a>
+    <a href="javascript:;"><?php _e( '<i class="fa fa-phone"></i> Contact Us', 'apm' ); ?></a>
 
     <section>
         <h3><?php the_field( 'quote-title', 'options' ); ?></h3>

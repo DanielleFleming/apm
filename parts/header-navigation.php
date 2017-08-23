@@ -1,4 +1,15 @@
 <header role="presentation">
+  <!-- TopBar -->
+      <div id="topbar" class="text-center">
+        <p>
+          INTRODUCING: OUTAGE IN A BOX<sup>&reg;</sup>
+          <a href="http://www.apm4parts.com/outages?utm_source=Static%20Banner" class="topbar-button">See What's Inside</a>
+        </p>
+        <button id="topbar-close" onclick="hideTopBar()">
+          <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+        </button>
+      </div>
+    <!-- End TopBar -->
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
