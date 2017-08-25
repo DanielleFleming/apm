@@ -37,6 +37,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</tr>
 	<?php endif; ?>
 
+	<tr>
+		<th>Part Number</th>
+		<td>
+			<p>
+				<?php
+					global $product;
+					echo $product->get_sku();
+				?>
+			</p>
+		</td>
+	</tr>
+
 	<?php foreach ( $attributes as $attribute ) : ?>
 		<tr>
 			<th><?php echo wc_attribute_label( $attribute->get_name() ); ?></th>
@@ -68,4 +80,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?></td>
 		</tr>
 	<?php endforeach; ?>
+
 </table>

@@ -434,3 +434,71 @@
     add_action( 'apm_salesforce_capture', 'apm_salesforce_capture_callback' );
 
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+    add_action('template_redirect', 'remove_sidebar_shop');
+    function remove_sidebar_shop() {
+    if ( is_product() ) {
+        remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar');
+        }
+    }
+
+    function getProductPartNumberShortcode( ){
+      global $product;
+      return $product->get_sku();
+    }
+    add_shortcode( 'part_number', 'getProductPartNumberShortcode' );
+
+    function getProductPartTypeShortcode( ){
+      global $product;
+      return $product->get_attribute( 'Part Type' );
+    }
+    add_shortcode( 'part_type', 'getProductPartTypeShortcode' );
+
+    function getProductEngineTypeShortcode( ){
+      global $product;
+      return $product->get_attribute( 'Engine Type' );
+    }
+    add_shortcode( 'engine_type', 'getProductEngineTypeShortcode' );
+
+    function getProductEngineModelShortcode( ){
+      global $product;
+      return $product->get_attribute( 'Engine Model' );
+    }
+    add_shortcode( 'engine_model', 'getProductEngineModelShortcode' );
+
+    add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+    function woo_rename_tabs( $tabs ) {
+
+    	$tabs['additional_information']['title'] = __( 'Data Sheet' );	// Rename the additional information tab
+
+    	return $tabs;
+
+    }
+
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+    function woo_custom_product_tab( $tabs ) {
+
+        $custom_tab = array(
+          		'custom_tab' =>  array(
+        							'title' => __('Related Products','woocommerce'),
+        							'priority' => 20,
+        							'callback' => 'woo_custom_product_tab_content'
+        						)
+        				);
+        return array_merge( $custom_tab, $tabs );
+    }
+
+    function woo_custom_product_tab_content() {
+    	woocommerce_related_products();
+    }
+    add_filter( 'woocommerce_product_tabs', 'woo_custom_product_tab' );
+
+    add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+    function woo_remove_product_tabs( $tabs ) {
+
+        unset( $tabs['description'] );      	// Remove the description tab
+        return $tabs;
+
+    }
