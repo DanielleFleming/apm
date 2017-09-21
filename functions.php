@@ -18,6 +18,10 @@
             add_image_size( 'apm-cta-banner-interior', 1920, 431, true );
             add_image_size( 'apm-feature-thumb', 381, 253, true );
 
+            add_theme_support( 'wc-product-gallery-zoom' );
+            add_theme_support( 'wc-product-gallery-lightbox' );
+            add_theme_support( 'wc-product-gallery-slider' );
+
             register_nav_menus(
                 array(
                     'nav-main'   => __( 'Header Navigation Menu', 'apm' ),
