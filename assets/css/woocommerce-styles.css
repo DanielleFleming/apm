@@ -306,3 +306,51 @@ content: "\f00e";
 line-height: 2;
 text-indent: 0;
 }
+
+
+/*HD AND AERO SEARCH BAR*/
+.parts-search-bar {
+	background: #d4282f;
+}
+
+.product-search input[type="text"].product-search-field {
+	padding: 5px 10px;
+	border: 0;
+	margin: 10px;
+}
+
+form.product-search-form {
+	text-align: center;
+}
+
+form.product-search-form button[type=submit] {padding: 5px 0px;border: 0;margin-left: -16px;width: 3%;font-size: 0;line-height: 0;background: #3e4543;height: 36px;}
+
+form.product-search-form button[type=submit]:before {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: block;
+	font-size: 22px;
+	line-height: 22px;
+	content: "";
+	color: #fff;
+}
+
+.product-button a {
+	background: #d4282f;
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.product-button a:hover {
+	background: #fff;
+	color: #d4282f;
+}
+
+.product-button {
+	margin-top: 20px;
+}

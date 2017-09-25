@@ -17,7 +17,11 @@
 		<?php endif; ?>
 	</header>
 
-	<?php if ( ( is_search() ) || ( is_archive() ) || ( is_home() ) ) : ?>
+	<?php if ( get_post_type() === 'product' ) : ?>
+		<div class="product-button">
+			<a href="<?php the_permalink(); ?>">View Part</a>
+		</div>
+	<?php elseif ( ( is_search() ) || ( is_archive() ) || ( is_home() ) ) : ?>
         <div class="entry-summary">
             <?php echo get_the_excerpt(); ?>
 

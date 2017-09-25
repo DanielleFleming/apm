@@ -2,6 +2,20 @@
 
     get_template_part( 'parts/content', 'featured_image' );
 
+    if (is_page( array( 'Aeroderivative', 'Heavy-Duty', 'GE', 'Pratt & Whitney', 'Siemens' ) ) ):
+      ?>
+      <div class="parts-search-bar">
+        <div class="container-fluid">
+          <?php
+            if ( function_exists( 'woocommerce_product_search' ) ) {
+              echo woocommerce_product_search( array( 'limit' => 20, 'sku' => 'yes', 'placeholder' => 'Search Parts', 'submit_button' => 'yes', 'submit_button_label' => 'Go' ) );
+            }
+          ?>
+        </div>
+      </div>
+      <?php
+    endif;
+
     if ( ( get_field( 'title-display' ) ) || ( is_home() ) || ( is_archive() ) || ( is_404() ) || ( is_search() ) || ( is_single() ) ) {
         $_page_id       = get_the_ID();
 
