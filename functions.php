@@ -458,17 +458,17 @@
     }
     add_shortcode( 'part_type', 'getProductPartTypeShortcode' );
 
-    function getProductEngineTypeShortcode( ){
+    function getProductTurbineTypeShortcode( ){
       global $product;
-      return $product->get_attribute( 'Engine Type' );
+      return $product->get_attribute( 'Turbine Type' );
     }
-    add_shortcode( 'engine_type', 'getProductEngineTypeShortcode' );
+    add_shortcode( 'turbine_type', 'getProductTurbineTypeShortcode' );
 
     function getProductEngineModelShortcode( ){
       global $product;
-      return $product->get_attribute( 'Engine Model' );
+      return $product->get_attribute( 'Engine Type' );
     }
-    add_shortcode( 'engine_model', 'getProductEngineModelShortcode' );
+    add_shortcode( 'engine_type', 'getProductEngineModelShortcode' );
 
     add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
     function woo_rename_tabs( $tabs ) {
@@ -508,3 +508,39 @@
         return $tabs;
 
     }
+
+    //Replace wp_trim_excerpt with a commented out strip_shortcodes()
+  function improved_trim_excerpt($text) {
+    global $product;
+  	$raw_excerpt = $text;
+  	if ( '' == $text ) {
+  		$text = get_the_content('');
+      $text = do_shortcode ($text);
+
+  		//$text = strip_shortcodes( $text );
+
+  		$text = apply_filters('the_content', $text);
+  		$text = str_replace(']]>', ']]>', $text);
+  		$text = strip_tags($text);
+  		$excerpt_length = apply_filters('excerpt_length', 55);
+  		$excerpt_more = apply_filters('excerpt_more', '...');
+  		$words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+  		if ( count($words) > $excerpt_length ) {
+  			array_pop($words);
+  			$text = implode(' ', $words);
+  			$text = $text . $excerpt_more;
+  		} else {
+  			$text = implode(' ', $words);
+  		}
+  	}
+  	return apply_filters('improved_trim_excerpt', $text, $raw_excerpt);
+  }
+
+  remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+  add_filter('get_the_excerpt', 'improved_trim_excerpt');
+
+
+  // Redefine woocommerce_output_related_products()
+  function woocommerce_output_related_products() {
+       woocommerce_related_products(4,1); // Display 4 products in rows of 2
+  }

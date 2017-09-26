@@ -18,7 +18,11 @@
 	</header>
 
 	<?php if ( get_post_type() === 'product' ) : ?>
+		<?php global $product; ?>
 		<div class="product-button">
+			<div class="entry-summary">
+					<?php echo improved_trim_excerpt(); ?>
+			</div>
 			<a href="<?php the_permalink(); ?>">View Part</a>
 		</div>
 	<?php elseif ( ( is_search() ) || ( is_archive() ) || ( is_home() ) ) : ?>

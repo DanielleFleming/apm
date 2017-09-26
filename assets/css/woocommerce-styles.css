@@ -1,5 +1,6 @@
 #woo-content {
 	padding: 50px 0;
+	padding-bottom: 0;
 }
 
 .red-text {
@@ -26,6 +27,7 @@ figure.woocommerce-product-gallery__wrapper {
 	margin-top: 20px;
 	border-top: 1px solid #3e4543;
 	padding-top: 20px;
+	margin-bottom: 40px;
 }
 
 .woocommerce-product-details__short-description {
@@ -143,7 +145,14 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 .woocommerce div.product .woocommerce-tabs .panel {
-	margin: 30px 20px;
+	margin: 0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-radius: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	margin-bottom: 0;
 }
 
 .woocommerce table.shop_attributes {
@@ -151,7 +160,8 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 .woocommerce table.shop_attributes th {
-	width: 200px;
+	width: 260px;
+	padding-left: 20px;
 }
 
 .woocommerce table.shop_attributes td p {
@@ -344,6 +354,8 @@ form.product-search-form button[type=submit]:before {
 	padding: 10px 20px;
 	color: #fff;
 	text-decoration: none;
+	margin-top: 20px;
+	display: inline-block;
 }
 
 .product-button a:hover {
@@ -353,4 +365,15 @@ form.product-search-form button[type=submit]:before {
 
 .product-button {
 	margin-top: 20px;
+}
+
+
+@media (max-width: 991px) {
+	.form-sidebar {
+		max-width: 100%;
+		margin-bottom: 40px;
+	}
+	.single-product ul.products li.product, .woocommerce-page section.related ul.products li.product {
+		width: 50%;
+	}
 }

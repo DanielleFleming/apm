@@ -87,7 +87,7 @@ global $product;
 	</div>
 </div><!-- .container -->
 
-	<div class="col-md-12 add-info">
+	<div class="add-info">
 		<?php
 			/**
 			 * woocommerce_after_single_product_summary hook.
