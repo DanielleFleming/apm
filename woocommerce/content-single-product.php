@@ -85,6 +85,29 @@ global $product;
 					<?php echo ninja_forms_display_form( get_field( 'parts-form',' options' ) ); ?>
 			</section>
 	</div>
+
+	<div class="col-md-12">
+		<!-- RELATED PRODUCTS TEST -->
+		<ul class="products">
+			<?php
+				global $product;
+				$args = array(
+					'post_type' => 'product',
+					'posts_per_page' => 4
+					);
+				$loop = new WP_Query( $args );
+				if ( $loop->have_posts() ) {
+					while ( $loop->have_posts() ) : $loop->the_post();
+
+						wc_get_template_part( 'content', 'product' );
+					endwhile;
+				} else {
+					echo __( 'No products found' );
+				}
+				wp_reset_postdata();
+			?>
+		</ul><!--/.products-->
+	</div>
 </div><!-- .container -->
 
 	<div class="add-info">

@@ -540,7 +540,52 @@
   add_filter('get_the_excerpt', 'improved_trim_excerpt');
 
 
-  // Redefine woocommerce_output_related_products()
-  function woocommerce_output_related_products() {
-       woocommerce_related_products(4,1); // Display 4 products in rows of 2
-  }
+  /**
+     * Output the related products.
+     *
+     * @subpackage  Product
+     */
+    function woocommerce_output_related_products() {
+
+        $args = array(
+            'posts_per_page'    => 4,
+            'columns'           => 4,
+            'orderby'           => 'rand',
+        );
+
+        woocommerce_related_products( apply_filters( 'woocommerce_output_related_products_args', $args ) );
+    }
+
+    /**
+     * Output the related products.
+     *
+     * @param array Provided arguments
+     */
+    function woocommerce_related_products( $args = array() ) {
+        global $product, $woocommerce_loop;
+
+        $defaults = array(
+            'posts_per_page' => 4,
+            'columns'        => 4,
+            'orderby'        => 'rand',
+            'order'          => 'desc',
+        );
+
+        $args = wp_parse_args( $args, $defaults );
+
+        if ( ! $product ) {
+            return;
+        }
+
+        // Get visble related products then sort them at random.
+        $args['related_products'] = array_filter( array_map( 'wc_get_product', wc_get_related_products( $product->get_id(), $args['posts_per_page'], $product->get_upsell_ids() ) ), 'wc_products_array_filter_visible' );
+
+        // Handle orderby.
+        $args['related_products'] = wc_products_array_orderby( $args['related_products'], $args['orderby'], $args['order'] );
+
+        // Set global loop values.
+        $woocommerce_loop['name']    = 'related';
+        $woocommerce_loop['columns'] = apply_filters( 'woocommerce_related_products_columns', $args['columns'] );
+
+        wc_get_template( 'single-product/related.php', $args );
+    }
