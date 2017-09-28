@@ -32,11 +32,11 @@ global $product;
 
 	<?php endif; ?>
 
-	<span class="posted_in">
+	<!-- <span class="posted_in">
 		Part Type: <span class="red-text"><?php echo $product->get_attribute( 'Part Type' ); ?></span>
-	</span>
+	</span> -->
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+	<!-- <?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?> -->
 
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>

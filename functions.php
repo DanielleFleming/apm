@@ -589,3 +589,14 @@
 
         wc_get_template( 'single-product/related.php', $args );
     }
+
+      // Add filter
+      add_filter( 'woocommerce_placeholder_img_src', 'growdev_custom_woocommerce_placeholder', 10 );
+
+      /**
+       * Function to return new placeholder image URL.
+       */
+      function growdev_custom_woocommerce_placeholder( $image_url ) {
+        $image_url = 'http://apm4parts.com/wp-content/uploads/parts-placeholder.jpg';  // change this to the URL to your custom placeholder
+        return $image_url;
+      }
