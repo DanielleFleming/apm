@@ -118,7 +118,6 @@ var apm = {
                                     position: {
                                         target: 'mouse',
                                         adjust: {
-                                            scroll: false,
                                             x: 5,
                                             y: 5
                                         }
@@ -129,7 +128,8 @@ var apm = {
                                     show: {
                                         event: 'click',
                                         modal: {
-                                            on: true
+                                            on: true,
+                                            blur: true
                                         }
                                     },
                                     style: {

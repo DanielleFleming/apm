@@ -72,8 +72,9 @@ global $product;
 
 				<div class="product-description-container">
 					<?php echo the_content(); ?>
+					<p>All parts provided by AP+M are guaranteed with a <a href="http://apm4parts.com/wp-content/uploads/Terms-Conditions-of-Sale.pdf" target="_blank">warranty</a>. We offer OEM-approved repair and overhaul services along with expert technical support to all customers.</p>
 					<br>
-					<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Related Parts:', 'Related Parts:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+					<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Related Part:', 'Related Parts:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
 
 					<!-- <p>Related Parts:</p> -->
 					<!-- Below gets product tags -->
@@ -88,6 +89,7 @@ global $product;
 	<div class="col-md-4 form-sidebar">
 			<section id="parts-quote-form">
 					<h3><?php the_field( 'parts-title', 'options' ); ?></h3>
+					<h4 style="margin-top:0px;">Need Immediate Assistance? Call 1-800-998-9844</h4>
 					<?php echo ninja_forms_display_form( get_field( 'parts-form',' options' ) ); ?>
 			</section>
 	</div>

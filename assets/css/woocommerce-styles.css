@@ -378,7 +378,7 @@ form.product-search-form button[type=submit]:before {
 }
 
 .no-result-search-bar {
-	margin-bottom: 80px;
+	margin-bottom: 20px;
 }
 
 .no-result-search-bar .product-search input[type="text"].product-search-field {

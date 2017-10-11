@@ -8,7 +8,7 @@
         <div class="container-fluid">
           <?php
             if ( function_exists( 'woocommerce_product_search' ) ) {
-              echo woocommerce_product_search( array( 'limit' => 20, 'sku' => 'yes', 'placeholder' => 'Search Parts', 'submit_button' => 'yes', 'submit_button_label' => 'Go' ) );
+              echo woocommerce_product_search( array( 'limit' => 20, 'sku' => 'yes', 'placeholder' => 'Enter Your Part Number Here', 'submit_button' => 'yes', 'submit_button_label' => 'Go' ) );
             }
           ?>
         </div>

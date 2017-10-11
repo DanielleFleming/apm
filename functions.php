@@ -470,6 +470,12 @@
     }
     add_shortcode( 'engine_type', 'getProductEngineModelShortcode' );
 
+    function getProductEngineModelDescriptionShortcode( ){
+      global $product;
+      return $product->get_attribute( 'Engine Type Description' );
+    }
+    add_shortcode( 'engine_type_description', 'getProductEngineModelDescriptionShortcode' );
+
     add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
     function woo_rename_tabs( $tabs ) {
 

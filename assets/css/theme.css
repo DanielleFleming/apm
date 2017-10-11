@@ -2454,8 +2454,7 @@ body {
   body > main {
     background-image: url(../images/bg-paper.jpg);
     background-repeat: repeat;
-    background-position: center top;
-  	padding-top: 50px; }
+    background-position: center top; }
     body > main .site-content {
       padding-right: 30px !important;
       padding-left: 30px !important; }
@@ -2796,7 +2795,8 @@ body > footer {
     }
 
 body {
-  margin-top: 190px; }
+  margin-top: 190px;
+	padding-top: 55px; }
   @media screen and (max-width: 992px) {
     body {
       margin-top: 139px; } }

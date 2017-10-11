@@ -30,8 +30,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="no-result-search-bar">
 				<?php
 					if ( function_exists( 'woocommerce_product_search' ) ) {
-						echo woocommerce_product_search( array( 'limit' => 20, 'sku' => 'yes', 'placeholder' => 'Search Parts', 'submit_button' => 'yes', 'submit_button_label' => 'Go' ) );
+						echo woocommerce_product_search( array( 'limit' => 20, 'sku' => 'yes', 'placeholder' => 'Enter Your Part Number Here', 'submit_button' => 'yes', 'submit_button_label' => 'Go' ) );
 					}
 				?>
 		</div>
+
+		<div class="business-hours">
+			<h3>Need Immediate Assistance?</h3>
+			<p>
+				Call 1-800-998-9844<br>
+				Business Hours: Monday-Friday 8am-5pm
+			</p>
+		</div>
+
+	</div>
+
+	<div class="col-md-4 form-sidebar" style="margin-bottom:60px;">
+		<section id="parts-quote-form">
+				<h3>Can't find your part?</h3>
+				<?php ninja_forms_display_form(  $form_id = '8' );  ?>
+		</section>
 	</div>
