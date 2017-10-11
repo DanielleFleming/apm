@@ -349,7 +349,7 @@ form.product-search-form button[type=submit]:before {
 	color: #fff;
 }
 
-.product-button a {
+.product-button a.view-part {
 	background: #d4282f;
 	padding: 10px 20px;
 	color: #fff;
@@ -358,13 +358,40 @@ form.product-search-form button[type=submit]:before {
 	display: inline-block;
 }
 
-.product-button a:hover {
+.product-button a.view-part:hover {
 	background: #fff;
 	color: #d4282f;
 }
 
 .product-button {
 	margin-top: 20px;
+}
+
+.search-results div.part-image > div.woocommerce-product-gallery {
+	opacity: 1!important;
+	display: block;
+	width:100%;
+}
+
+.search-results .part-image img {
+		margin-bottom: 20px;
+}
+
+.no-result-search-bar {
+	margin-bottom: 80px;
+}
+
+.no-result-search-bar .product-search input[type="text"].product-search-field {
+	width: 95%;
+	margin-left:0;
+}
+
+.no-result-search-bar form.product-search-form {
+	text-align: left;
+}
+
+.no-result-search-bar form.product-search-form button[type=submit] {
+	width: 5%;
 }
 
 
@@ -375,5 +402,11 @@ form.product-search-form button[type=submit]:before {
 	}
 	.single-product ul.products li.product, .woocommerce-page section.related ul.products li.product {
 		width: 50%;
+	}
+}
+
+@media (max-width: 767px) {
+	.search-results div.part-image > div.woocommerce-product-gallery {
+		max-width: 300px;
 	}
 }

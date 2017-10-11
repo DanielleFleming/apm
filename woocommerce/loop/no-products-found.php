@@ -21,4 +21,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<p class="woocommerce-info"><?php _e( 'No products were found matching your selection.', 'woocommerce' ); ?></p>
+
+	<div class="col-md-8">
+		<div class="alert alert-danger">
+		    <p>Sorry, we currently do not have that part in stock.</p>
+		</div>
+
+		<div class="no-result-search-bar">
+				<?php
+					if ( function_exists( 'woocommerce_product_search' ) ) {
+						echo woocommerce_product_search( array( 'limit' => 20, 'sku' => 'yes', 'placeholder' => 'Search Parts', 'submit_button' => 'yes', 'submit_button_label' => 'Go' ) );
+					}
+				?>
+		</div>
+	</div>

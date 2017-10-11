@@ -19,11 +19,29 @@
 
 	<?php if ( get_post_type() === 'product' ) : ?>
 		<?php global $product; ?>
-		<div class="product-button">
-			<div class="entry-summary">
-					<?php echo improved_trim_excerpt(); ?>
+		<div class="row">
+			<div class="product-button">
+				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );?>
+				<?php if ( $image ) : ?>
+					<div class="part-image col-md-3 col-xs-12 col-sm-6">
+
+				    <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>" class="img-responsive"></a>
+
+					</div>
+				<?php else : ?>
+					<div class="part-image col-md-3 col-xs-12 col-sm-6">
+
+				    <a href="<?php the_permalink(); ?>"><img src="http://apm4parts.com/wp-content/uploads/parts-placeholder.jpg" class="img-responsive"></a>
+
+					</div>
+				<?php endif; ?>
+
+				<div class="clearfix visible-sm visible-xs"></div>
+				<div class="entry-summary col-md-9">
+						<?php echo improved_trim_excerpt(); ?> <br>
+						<a class="view-part" href="<?php the_permalink(); ?>">View Part</a>
+				</div>
 			</div>
-			<a href="<?php the_permalink(); ?>">View Part</a>
 		</div>
 	<?php elseif ( ( is_search() ) || ( is_archive() ) || ( is_home() ) ) : ?>
         <div class="entry-summary">
