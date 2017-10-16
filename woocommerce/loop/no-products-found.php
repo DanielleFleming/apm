@@ -48,6 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="col-md-4 form-sidebar" style="margin-bottom:60px;">
 		<section id="parts-quote-form">
 				<h3>Can't find your part?</h3>
+				<h4 style="margin-top:0px;">Please provide us with additional information below and one of our Customer Service personnel will assist</h4>
 				<?php ninja_forms_display_form(  $form_id = '8' );  ?>
 		</section>
 	</div>

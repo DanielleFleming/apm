@@ -410,3 +410,8 @@ form.product-search-form button[type=submit]:before {
 		max-width: 300px;
 	}
 }
+
+.form-sidebar textarea::placeholder {
+	font-size: 16px;
+	line-height: 22px;
+}
